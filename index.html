@@ -146,13 +146,14 @@
 
       <!-- full-bleed video - the clip IS the hero background (no frame, no box) -->
       <div class="hero-video-bg" aria-hidden="true">
-        <!-- ambient blurred fill - extends the scene edge-to-edge so the whole hero
-             (incl. the left rail area) reads as one continuous video, no empty zones -->
-        <video class="hero-video-fill" autoplay muted loop playsinline preload="auto" tabindex="-1">
-          <source src="assets/hero-video.mp4" type="video/mp4" />
-        </video>
-        <!-- crisp focal clip - the whole frame, slightly reduced, feathered all around -->
-        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto">
+        <!-- ambient blurred fill - a STATIC poster frame (not a 2nd video) extends the
+             scene edge-to-edge so the whole hero reads as one continuous scene with no
+             empty zones. Static + CSS blur is near-free vs blurring a playing video every
+             frame, and it avoids downloading/decoding the clip twice. -->
+        <img class="hero-video-fill" src="assets/hero-poster.jpg" alt="" tabindex="-1" />
+        <!-- crisp focal clip - the whole frame, slightly reduced, feathered all around.
+             poster shows instantly while the (now single, lighter) clip streams in. -->
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
           <source src="assets/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
