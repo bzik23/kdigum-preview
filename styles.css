@@ -878,19 +878,25 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   .phone-link span{display:none}                  /* phone collapses to a tap-to-call icon on mobile */
   .phone-link{padding:9px;border:1px solid var(--line)}
   .header-cta{gap:8px;margin-inline-end:0}        /* drop the desktop nudge; tighten controls */
+  /* mobile header layout: logo to the LEFT, controls (incl. hamburger) to the RIGHT edge */
+  .header-inner{flex-direction:row-reverse}
+  .header-cta{flex-direction:row-reverse}         /* hamburger pinned to the far-right edge */
   .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;
     border:1px solid var(--line);background:#fff;border-radius:12px;cursor:pointer;box-shadow:var(--shadow-sm)}
   .nav-toggle span{display:block;width:22px;height:2.5px;background:var(--ink);border-radius:2px;margin-inline:auto;transition:.3s}
   .main-nav{
-    position:fixed;top:0;left:0;right:auto;height:100dvh;width:min(330px,86vw);
-    background:#fff;box-shadow:12px 0 40px rgba(14,40,60,.18);border-right:1px solid var(--line);
-    z-index:150;padding:74px 20px 30px;overflow-y:auto;
-    transform:translateX(-100%);transition:transform .35s var(--ease);
+    position:fixed;top:0;right:0;left:auto;height:100dvh;width:min(340px,88vw);
+    /* frosted-glass panel - slight 15% transparency (85% opaque) over a blur */
+    background:rgba(255,255,255,.85);
+    -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);
+    box-shadow:-18px 0 50px rgba(14,40,60,.22);border-left:1px solid rgba(255,255,255,.6);
+    z-index:150;padding:78px 18px 30px;overflow-y:auto;
+    transform:translateX(100%);transition:transform .4s var(--ease);   /* slides in from the right to match the hamburger */
   }
   .main-nav.open{transform:translateX(0)}
   .main-nav>ul{flex-direction:column;align-items:stretch;gap:2px}
   .main-nav a{font-size:17px;padding:13px 12px;border-radius:10px}
-  .nav-close{display:block;position:absolute;top:16px;left:18px;right:auto;background:none;border:none;font-size:34px;line-height:1;color:var(--ink);cursor:pointer}
+  .nav-close{display:block;position:absolute;top:16px;right:18px;left:auto;background:none;border:none;font-size:34px;line-height:1;color:var(--ink);cursor:pointer}
   .mega{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:transparent;
     grid-template-columns:1fr;padding:4px 10px 10px;gap:0;display:none}
   .mega::before{display:none}                       /* no hover-bridge in the mobile accordion */
@@ -901,21 +907,25 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   .mega-col h4{margin-top:8px}
   .mega-col a{font-size:16px;padding:11px 12px}
 
+  /* --- mobile menu polish (frosted-glass panel) --- */
+  .main-nav>ul>li{border-bottom:1px solid rgba(14,40,60,.07)}
+  .main-nav>ul>li:last-child{border-bottom:none}
+  .main-nav>ul>li>a{display:flex;width:100%;justify-content:space-between;align-items:center;font-weight:700;color:var(--ink)}
+  .main-nav>ul>li>a:hover,.main-nav>ul>li>a:active{background:var(--green-tint);color:var(--green-700)}
+  .has-mega.expanded>.dd-toggle{color:var(--green-700)}
+  .has-mega.expanded .caret{transform:rotate(180deg)}
+  .mega{margin-inline-start:8px;padding-inline-start:8px;border-inline-start:2px solid rgba(67,175,73,.22)}
+  .mega-col h4{margin:10px 0 2px}
+  .mega-col h4 a,.mega-col a{color:var(--body);font-weight:600}
+  .mega-col a:hover{color:var(--green-700);background:var(--green-tint)}
+
   .features-grid,.sectors-grid,.knowledge-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr;gap:32px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
   .band-inner{flex-direction:column;text-align:center;align-items:center}
 
-  /* Mobile sticky bar */
-  .mobile-bar{
-    display:grid;grid-template-columns:1fr 1fr 1.2fr;position:fixed;bottom:0;inset-inline:0;z-index:90;
-    background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -6px 22px rgba(14,40,60,.10);
-    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  }
-  .mobile-bar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px 4px;font-size:12.5px;font-weight:700;color:var(--ink)}
-  .mobile-bar a svg{width:19px;height:19px}
-  .mobile-bar .mb-primary{background:var(--green-500);color:#fff}
-  body{padding-bottom:64px}
+  /* Mobile sticky bottom bar removed per request - stays hidden on mobile too */
+  .mobile-bar{display:none}
   .accreditation .container{flex-direction:column;gap:8px}
   .accreditation p{font-size:14px}
 }
