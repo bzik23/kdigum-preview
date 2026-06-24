@@ -33,14 +33,22 @@
   closeBtn.addEventListener('click', closeNav);
   overlay.addEventListener('click', closeNav);
 
-  /* --- Mobile dropdown accordion (mega menu) --- */
+  /* --- Mobile dropdown accordion (mega menu) — robust for iOS touch ---
+     Bind touchend AND click: on iOS Safari a click handler on an <a> inside a
+     momentum-scroll drawer can be unreliable, so touchend drives the toggle and a
+     time guard collapses the touchend + the ghost click that follows into one action. */
   document.querySelectorAll('.has-mega > .dd-toggle').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      if (isMobile()) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('expanded');
-      }
-    });
+    let last = 0;
+    const toggleSub = (e) => {
+      if (!isMobile()) return;
+      if (e.cancelable) e.preventDefault();
+      const now = Date.now();
+      if (now - last < 400) return;
+      last = now;
+      link.parentElement.classList.toggle('expanded');
+    };
+    link.addEventListener('touchend', toggleSub);
+    link.addEventListener('click', toggleSub);
   });
 
   /* --- Close mobile nav when a link is tapped --- */
