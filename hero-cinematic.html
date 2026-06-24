@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>קיסר דיגום | חוויית הירו קולנועית (שלב 1)</title>
+  <meta name="description" content="קיסר דיגום - מה שנראה נקי לעין, לא תמיד נקי באמת. מהבריכה החיה, דרך נטילת הדגימה והמעבדה, אל העולם המיקרוסקופי וזיהוי הליגיונלה." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+  /* =========================================================
+     קיסר דיגום - Cinematic Hero (Phase 1, v2)
+     Scroll-driven 6 beats:
+     Pool (alive) → Sampling → Lab → Microscope → Legionella scan → Payoff
+     Code-only (GSAP ScrollTrigger + Canvas + SVG). RTL.
+     Brand (from logo): deep navy ink + scientific green.
+     ========================================================= */
+  :root{
+    --navy-900:#04121f; --navy-800:#061c2e; --navy-700:#0a2942; --teal-700:#0c3a4f;
+    --blue-600:#0c63a3; --cyan-400:#3ac2e6; --cyan-300:#7fe3ff;
+    --green:#37b34a; --green-300:#5fd97a; --green-200:#9bf0ad;
+    --amber:#ffb020;
+    --font:'Heebo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--navy-900);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none} ul{list-style:none}
+
+  /* ---------- Top bar + progress ---------- */
+  .cine-topbar{position:fixed;top:0;inset-inline:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(16px,4vw,40px);background:linear-gradient(180deg,rgba(4,18,31,.7),transparent)}
+  .logo-pill{background:#fff;border-radius:11px;padding:6px 11px;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+  .logo-pill img{height:38px;width:auto;display:block}
+  .top-call{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:9px 18px;border-radius:999px;color:#fff;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .25s,transform .25s}
+  .top-call:hover{background:var(--green);border-color:var(--green);transform:translateY(-2px)}
+  .cine-progress{position:fixed;top:0;inset-inline:0;height:3px;z-index:70;background:rgba(255,255,255,.08)}
+  .cine-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan-400),var(--green-300))}
+
+  /* ---------- Stage ---------- */
+  .cine{position:relative;height:100vh;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,var(--teal-700),var(--navy-800) 55%,var(--navy-900))}
+  .cine-stage{position:absolute;inset:0}
+  .scene{position:absolute;inset:0;opacity:0;visibility:hidden;display:grid;place-items:center;will-change:opacity,transform}
+  .cine-vignette{position:absolute;inset:0;z-index:40;pointer-events:none;background:radial-gradient(120% 100% at 50% 45%,transparent 55%,rgba(2,10,18,.55))}
+  .cine-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green-300);margin-bottom:14px}
+  .cine-eyebrow.alt{color:var(--cyan-300)}
+
+  /* ================= Scene 1 - POOL (real photo) ================= */
+  .scene-pool{opacity:1;visibility:visible;z-index:10;background:#0c4f86;overflow:hidden}
+  .pool-zoom{position:absolute;inset:0;will-change:transform}
+  .pool-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:60% 45%;animation:kenburns 20s ease-in-out infinite alternate}
+  @keyframes kenburns{0%{transform:scale(1.06)}100%{transform:scale(1.2) translate(-2%,-1%)}}
+  .pool-scrim{position:absolute;inset:0;background:
+    radial-gradient(120% 95% at 50% 58%,transparent 36%,rgba(4,18,31,.5)),
+    linear-gradient(180deg,rgba(4,18,31,.32),transparent 26%,transparent 56%,rgba(4,18,31,.42))}
+  .pool-cap{position:relative;z-index:4;text-align:center;color:#fff;text-shadow:0 4px 26px rgba(0,25,48,.7)}
+  .pool-cap .cine-eyebrow{color:var(--green-300)}
+  .pool-cap h2{font-size:clamp(30px,5.6vw,66px);font-weight:900;color:#fff;letter-spacing:-.5px}
+  .pool-cap p{font-size:clamp(16px,2.4vw,22px);color:rgba(255,255,255,.92);font-weight:600;margin-top:8px}
+  .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;font-size:14px;font-weight:700;color:#fff;display:flex;flex-direction:column;align-items:center;gap:6px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+  .scroll-hint span{font-size:22px;animation:hintBounce 1.6s ease-in-out infinite}
+  @keyframes hintBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* ================= Scene 1.5 - SAMPLER (real photo) ================= */
+  .scene-sampler{z-index:11}
+  .sampler-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .sampler-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,18,31,.5),rgba(4,18,31,.3) 38%,rgba(4,18,31,.78))}
+
+  /* ================= Scene 2 - SAMPLING ================= */
+  .scene-sampling{z-index:12}
+  .sampling-stage{position:relative;width:min(72vw,560px);height:min(64vh,540px)}
+  .water-surface{position:absolute;inset-inline:0;bottom:0;height:46%;overflow:hidden;border-radius:0 0 18px 18px;
+    background:linear-gradient(180deg,#2db4dd,#0c63a3 90%)}
+  .water-surface::before{content:"";position:absolute;inset-inline:-10%;top:-10px;height:22px;border-radius:50%;
+    background:rgba(255,255,255,.18);filter:blur(3px);animation:surfaceShimmer 5s ease-in-out infinite}
+  @keyframes surfaceShimmer{0%,100%{transform:translateX(-4%)}50%{transform:translateX(4%)}}
+  .entry-ripple{position:absolute;left:50%;bottom:46%;width:120px;height:30px;transform:translate(-50%,50%);border-radius:50%;border:2px solid rgba(255,255,255,.7);opacity:0}
+  .sbottle{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:62px;height:160px;z-index:3}
+  .sbottle .pole{position:absolute;left:50%;top:-56%;width:5px;height:60%;transform:translateX(-50%);background:linear-gradient(180deg,#d3dbe1,#7e8d97);border-radius:3px}
+  .sbottle .cap{position:absolute;top:0;left:50%;transform:translateX(-50%);width:30px;height:16px;background:#cfd8e0;border-radius:5px;z-index:2}
+  .sbottle .glass{position:absolute;bottom:0;left:0;right:0;height:140px;border-radius:12px 12px 16px 16px;border:2px solid rgba(255,255,255,.75);background:rgba(255,255,255,.07);overflow:hidden}
+  .sbottle .fill{position:absolute;left:0;right:0;bottom:0;height:0%;background:linear-gradient(180deg,var(--cyan-400),var(--blue-600))}
+  .sbottle .shine{position:absolute;top:8px;left:8px;width:8px;height:90px;border-radius:999px;background:rgba(255,255,255,.4)}
+  .stage-cap{position:absolute;inset-block:auto 4%;inset-inline:0;text-align:center}
+  .stage-cap h2{font-size:clamp(24px,4vw,42px);font-weight:900;background:linear-gradient(90deg,#fff,var(--cyan-300));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stage-cap p{color:rgba(255,255,255,.78);font-size:clamp(14px,2vw,18px);margin-top:8px}
+
+  /* ================= Scene 3 - LAB ================= */
+  .scene-lab{z-index:14}
+  .lab-stage{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(18px,4vw,52px);flex-wrap:wrap}
+  .microscope{width:clamp(120px,16vw,170px);height:auto;color:var(--cyan-300);filter:drop-shadow(0 12px 30px rgba(0,0,0,.4))}
+  .rack{display:flex;align-items:flex-end;gap:11px}
+  .lab-vial{width:20px;height:84px;border:2px solid rgba(255,255,255,.5);border-radius:4px 4px 9px 9px;position:relative;overflow:hidden;background:rgba(255,255,255,.05)}
+  .lab-vial::after{content:"";position:absolute;inset-inline:0;bottom:0;height:54%;background:var(--cyan-400);opacity:.7}
+  .lab-vial.sample{border-color:var(--green-300);box-shadow:0 0 20px rgba(95,217,122,.55)}
+  .lab-vial.sample::after{background:var(--green);height:66%}
+  .lab-screen{width:min(42vw,250px);padding:14px 16px;border-radius:14px;background:rgba(6,28,46,.6);border:1px solid rgba(127,227,255,.28);text-align:start}
+  .lab-screen .ls-head{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--cyan-300);margin-bottom:10px}
+  .lab-screen svg{width:100%;height:64px;display:block}
+  .lab-screen .line{fill:none;stroke:var(--green-300);stroke-width:2;stroke-dasharray:600;stroke-dashoffset:600}
+  .lab-screen .ls-foot{margin-top:8px;font-size:11.5px;color:rgba(255,255,255,.55);font-variant-numeric:tabular-nums}
+
+  /* microscope iris (enter the scope) */
+  .scope-iris{position:absolute;top:50%;left:50%;width:30px;height:30px;border-radius:50%;transform:translate(-50%,-50%);
+    box-shadow:0 0 0 9999px var(--navy-900);z-index:16;opacity:0;visibility:hidden}
+
+  /* ================= Scene 4 - MICROSCOPE field ================= */
+  #micro{position:absolute;inset:0;z-index:5;display:block;width:100%;height:100%}
+  .micro-copy{position:absolute;z-index:25;inset-block:auto 12%;inset-inline-start:clamp(20px,6vw,90px);text-align:start;max-width:520px;opacity:0;visibility:hidden}
+  .micro-copy h2{font-size:clamp(26px,4.4vw,48px);font-weight:900;letter-spacing:-.5px;background:linear-gradient(90deg,#fff,var(--green-200));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .micro-copy p{font-size:clamp(15px,2.1vw,20px);color:rgba(255,255,255,.82);margin-top:10px}
+
+  /* ================= Scene 5 - LEGIONELLA scan ================= */
+  .scene-hud{z-index:30}
+  .hud-frame{position:absolute;top:50%;left:50%;width:min(46vw,440px);aspect-ratio:1;transform:translate(-50%,-50%)}
+  .corner{position:absolute;width:34px;height:34px;border:2px solid var(--cyan-300);opacity:.9}
+  .corner.tl{top:0;left:0;border-inline-end:0;border-block-end:0}
+  .corner.tr{top:0;right:0;border-inline-start:0;border-block-end:0}
+  .corner.bl{bottom:0;left:0;border-inline-end:0;border-block-start:0}
+  .corner.br{bottom:0;right:0;border-inline-start:0;border-block-start:0}
+  .scanner-ring{position:absolute;inset:8%;animation:spin 8s linear infinite}
+  .scanner-ring circle{fill:none;stroke:rgba(127,227,255,.5);stroke-width:1.5;stroke-dasharray:6 10}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .reticle{position:absolute;top:50%;left:50%;width:120px;height:120px;transform:translate(-50%,-50%)}
+  .reticle::before,.reticle::after{content:"";position:absolute;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+  .reticle::before{top:50%;left:0;right:0;height:1.5px;transform:translateY(-50%)}
+  .reticle::after{left:50%;top:0;bottom:0;width:1.5px;transform:translateX(-50%)}
+  .reticle .lock{position:absolute;inset:0;border:1.5px solid var(--amber);border-radius:8px;box-shadow:0 0 18px rgba(255,176,32,.5)}
+  .scan-line{position:absolute;inset:8%;overflow:hidden;border-radius:50%}
+  .scan-line::after{content:"";position:absolute;inset-inline:0;height:2px;top:0;background:linear-gradient(90deg,transparent,var(--cyan-300),transparent);box-shadow:0 0 14px var(--cyan-300);animation:scanSweep 2.6s ease-in-out infinite}
+  @keyframes scanSweep{0%{top:0}50%{top:100%}100%{top:0}}
+  .hud-panel{position:absolute;inset-block:auto 14%;inset-inline-start:clamp(20px,6vw,80px);width:min(86vw,360px);padding:18px 20px;border-radius:16px;text-align:start;
+    background:rgba(6,28,46,.55);border:1px solid rgba(127,227,255,.28);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .hud-head{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:1px;color:var(--cyan-300);text-transform:uppercase}
+  .rec-dot{width:9px;height:9px;border-radius:50%;background:#ff5470;box-shadow:0 0 0 0 rgba(255,84,112,.6);animation:rec 1.6s ease-out infinite}
+  @keyframes rec{0%{box-shadow:0 0 0 0 rgba(255,84,112,.6)}70%{box-shadow:0 0 0 9px rgba(255,84,112,0)}100%{box-shadow:0 0 0 0 rgba(255,84,112,0)}}
+  .hud-row{margin-top:14px;display:flex;flex-direction:column}
+  .hud-row strong{font-size:22px;font-weight:900;color:#fff}
+  .hud-row.alert strong{color:var(--amber)}
+  .hud-row span{font-size:13px;color:rgba(255,255,255,.6);font-style:italic;letter-spacing:.5px}
+  .hud-meter{margin-top:14px;font-size:13px;color:rgba(255,255,255,.7)}
+  .hud-meter .bar{margin-top:6px;height:7px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+  .hud-meter .bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--amber))}
+  .hud-stat{margin-top:14px;display:flex;align-items:baseline;gap:6px}
+  .hud-stat span{font-size:13px;color:rgba(255,255,255,.7);margin-inline-end:auto}
+  .hud-stat b{font-size:26px;font-weight:900;color:var(--green-300);font-variant-numeric:tabular-nums}
+  .hud-stat i{font-size:15px;color:var(--green-300);font-style:normal}
+  .hud-mini{margin-top:12px;display:flex;gap:14px;font-size:11.5px;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;letter-spacing:.5px}
+  .hud-sub{position:absolute;top:14%;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(127,227,255,.8);white-space:nowrap}
+
+  /* ================= Scene 6 - PAYOFF ================= */
+  .scene-payoff{z-index:50;background:radial-gradient(120% 90% at 50% 40%,rgba(10,41,66,.4),rgba(4,18,31,.85))}
+  .payoff-inner{text-align:center;max-width:920px;padding:0 22px}
+  .payoff-tag{display:flex;flex-direction:column;gap:4px;margin-bottom:26px}
+  .payoff-line{display:block;font-size:clamp(28px,6vw,72px);font-weight:900;letter-spacing:-1px;line-height:1.08;color:#fff;overflow:hidden}
+  .payoff-line.accent{background:linear-gradient(90deg,var(--cyan-300),var(--green-300));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .payoff-brand{font-size:clamp(16px,2.4vw,22px);color:rgba(255,255,255,.85);font-weight:600;margin-bottom:18px}
+  .payoff-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:30px}
+  .payoff-chips span{font-size:14px;font-weight:700;color:var(--cyan-300);padding:7px 16px;border-radius:999px;background:rgba(127,227,255,.08);border:1px solid rgba(127,227,255,.25)}
+  .payoff-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-weight:800;font-size:17px;padding:15px 34px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .25s}
+  .btn-primary{background:var(--green);color:#04121f;box-shadow:0 14px 34px rgba(55,179,74,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(55,179,74,.55)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:#fff;color:var(--navy-900);transform:translateY(-3px)}
+
+  /* ---------- After ---------- */
+  .after{min-height:70vh;display:grid;place-items:center;text-align:center;padding:60px 22px;background:linear-gradient(180deg,var(--navy-900),#02263a)}
+  .after .tag{display:inline-block;margin-bottom:18px;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green-300)}
+  .after h3{font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:10px}
+  .after p{color:rgba(255,255,255,.7);max-width:560px;margin-inline:auto}
+
+  /* ---------- Static / reduced-motion fallback ---------- */
+  .cine-static .cine{height:auto;min-height:100vh}
+  .cine-static .scene{display:none}
+  .cine-static .scene-payoff{display:grid;opacity:1;visibility:visible;min-height:100vh}
+  .cine-static #micro,.cine-static .cine-progress{display:none}
+
+  @media (max-width:760px){
+    .hud-panel,.micro-copy{inset-inline:16px;width:auto;max-width:none}
+    .pool{width:92vw;height:48vh}
+    .lab-stage{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+</head>
+<body>
+
+  <div class="cine-progress" aria-hidden="true"><i id="progBar"></i></div>
+
+  <header class="cine-topbar">
+    <a href="index.html" class="logo-pill" aria-label="קיסר דיגום"><img src="assets/logo.png" alt="קיסר דיגום" /></a>
+    <a href="tel:0548757575" class="top-call">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      054-8757575
+    </a>
+  </header>
+
+  <section class="cine" id="cine">
+    <div class="cine-stage">
+
+      <!-- behind everything: microscope canvas -->
+      <canvas id="micro" aria-hidden="true"></canvas>
+
+      <!-- Scene 1 - Pool (real photo) -->
+      <div class="scene scene-pool" aria-hidden="true">
+        <div class="pool-zoom">
+          <img class="pool-photo" src="assets/pool-b.jpg" alt="" />
+          <div class="pool-scrim"></div>
+        </div>
+        <div class="pool-cap">
+          <span class="cine-eyebrow">קיסר דיגום</span>
+          <h2>המים נראים צלולים.</h2>
+          <p>נקיים. בטוחים. בריאים - לכאורה.</p>
+        </div>
+        <div class="scroll-hint">גלול כדי לצלול <span>↓</span></div>
+      </div>
+
+      <!-- Scene 1.5 - Sampler (real photo, interim) -->
+      <div class="scene scene-sampler" aria-hidden="true">
+        <img class="sampler-photo" src="assets/sampler.jpg" alt="" />
+        <div class="sampler-scrim"></div>
+        <div class="stage-cap">
+          <h2>הדוגם נכנס לתמונה</h2>
+          <p>בדיקת איכות המים מתחילה בשטח.</p>
+        </div>
+      </div>
+
+      <!-- Scene 2 - Sampling -->
+      <div class="scene scene-sampling" aria-hidden="true">
+        <div class="sampling-stage">
+          <div class="water-surface"></div>
+          <span class="entry-ripple"></span>
+          <div class="sbottle">
+            <span class="pole"></span>
+            <span class="cap"></span>
+            <span class="glass"><span class="fill"></span><span class="shine"></span></span>
+          </div>
+        </div>
+        <div class="stage-cap">
+          <h2>הדוגם נוטל דגימה</h2>
+          <p>דגימת מים מבוקרת - בדרך אל המעבדה.</p>
+        </div>
+      </div>
+
+      <!-- Scene 3 - Lab -->
+      <div class="scene scene-lab" aria-hidden="true">
+        <div class="lab-stage">
+          <svg class="microscope" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M50 16a10 10 0 0 1 10 10c0 8-6 12-6 20l-8 0c0-8-6-12-6-20a10 10 0 0 1 10-10Z"/>
+            <path d="M54 66c14 0 24 11 24 26"/>
+            <path d="M30 104h44"/>
+            <path d="M40 104v-8h20v8"/>
+            <circle cx="50" cy="88" r="6"/>
+          </svg>
+          <div class="rack">
+            <span class="lab-vial"></span>
+            <span class="lab-vial sample"></span>
+            <span class="lab-vial"></span>
+          </div>
+          <div class="lab-screen">
+            <div class="ls-head">ניתוח דגימה</div>
+            <svg viewBox="0 0 240 64" preserveAspectRatio="none"><path class="line" d="M0 44 L40 40 L70 48 L100 20 L130 34 L160 12 L200 30 L240 22"/></svg>
+            <div class="ls-foot">סריקת פתוגנים · CFU / ml</div>
+          </div>
+        </div>
+        <div class="stage-cap">
+          <h2>במעבדה בודקים את המים</h2>
+          <p>האם מסתתר חיידק במה שנראה צלול?</p>
+        </div>
+      </div>
+
+      <!-- iris: entering the microscope -->
+      <span class="scope-iris" aria-hidden="true"></span>
+
+      <!-- Scene 4 - Microscopic copy -->
+      <div class="micro-copy">
+        <span class="cine-eyebrow alt">מתחת לפני השטח</span>
+        <h2>עולם שלם בלתי נראה</h2>
+        <p>מיקרואורגניזמים שהעין לא קולטת - חלקם מסכנים בריאות.</p>
+      </div>
+
+      <!-- Scene 5 - Legionella scan -->
+      <div class="scene scene-hud" aria-hidden="true">
+        <div class="hud-sub">Legionella Detected · Potential Risk Identified</div>
+        <div class="hud-frame">
+          <span class="corner tl"></span><span class="corner tr"></span>
+          <span class="corner bl"></span><span class="corner br"></span>
+          <svg class="scanner-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48"/></svg>
+          <div class="scan-line"></div>
+          <div class="reticle"><span class="lock"></span></div>
+        </div>
+        <div class="hud-panel">
+          <div class="hud-head"><span class="rec-dot"></span> ניתוח דגימה · LIVE</div>
+          <div class="hud-row alert"><strong>זוהתה ליגיונלה</strong><span>Legionella pneumophila</span></div>
+          <div class="hud-meter">רמת סיכון<div class="bar"><i></i></div></div>
+          <div class="hud-stat"><span>ודאות זיהוי</span><b class="count" id="confCount">0.0</b><i>%</i></div>
+          <div class="hud-mini"><span>37.4°C</span><span>pH 7.2</span><span>CFU 1.8×10³</span></div>
+        </div>
+      </div>
+
+      <!-- Scene 6 - Payoff -->
+      <div class="scene scene-payoff">
+        <div class="payoff-inner">
+          <div class="payoff-tag">
+            <span class="payoff-line">מה שנראה נקי לעין,</span>
+            <span class="payoff-line accent">לא תמיד נקי באמת.</span>
+          </div>
+          <p class="payoff-brand">קיסר דיגום - פתרונות דיגום, ניטור ובקרה לבריאות הציבור</p>
+          <div class="payoff-chips"><span>מים</span><span>מזון</span><span>אוויר</span><span>חיטוי</span><span>ניטור סביבתי</span></div>
+          <div class="payoff-cta">
+            <a class="btn btn-primary" href="tel:0548757575">קבלת הצעת מחיר</a>
+            <a class="btn btn-ghost" href="https://wa.me/972548757575" target="_blank" rel="noopener">צור קשר</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="cine-vignette" aria-hidden="true"></div>
+  </section>
+
+  <section class="after">
+    <div>
+      <span class="tag">שלב 1 · דמו</span>
+      <h3>כאן ממשיך האתר המלא</h3>
+      <p>מכאן יימשכו שאר חלקי האתר - שירותים, פתרונות לפי ענף, מרכז ידע וטופס יצירת קשר.</p>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+  (function(){
+    'use strict';
+    var clamp=function(v,a,b){return v<a?a:(v>b?b:v);};
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- Microscope canvas ---- */
+    var canvas=document.getElementById('micro');
+    var ctx=canvas.getContext('2d');
+    var W=0,H=0,DPR=1,particles=[],target=null;
+    var zoom=1, microAlpha=0, scanAlpha=0, raf=null, t=0;
+    var small=window.matchMedia('(max-width:760px)').matches;
+    var N=small?26:48;
+
+    function resize(){
+      DPR=Math.min(window.devicePixelRatio||1,2);
+      var r=canvas.getBoundingClientRect();
+      W=r.width;H=r.height;
+      canvas.width=Math.max(1,W*DPR);canvas.height=Math.max(1,H*DPR);
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+    }
+    function rnd(a,b){return a+Math.random()*(b-a);}
+    function init(){
+      particles=[];
+      for(var i=0;i<N;i++){
+        particles.push({x:Math.random(),y:Math.random(),r:rnd(7,26),depth:rnd(.45,1.4),
+          hue:rnd(140,188),sat:rnd(42,68),vx:rnd(-1,1),vy:rnd(-1.2,.5),phase:Math.random()*6.28,wob:rnd(.4,1.1)});
+      }
+      target={x:.5,y:.46,r:18};
+    }
+    function cell(x,y,r,hue,sat,a){
+      if(a<=0||r<=0)return;
+      var g=ctx.createRadialGradient(x,y,0,x,y,r);
+      g.addColorStop(0,'hsla('+hue+','+sat+'%,74%,'+(0.5*a)+')');
+      g.addColorStop(.5,'hsla('+hue+','+sat+'%,55%,'+(0.2*a)+')');
+      g.addColorStop(1,'hsla('+hue+','+sat+'%,45%,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,6.2832);ctx.fill();
+      ctx.fillStyle='hsla('+hue+','+sat+'%,88%,'+(0.45*a)+')';
+      ctx.beginPath();ctx.arc(x,y,r*0.22,0,6.2832);ctx.fill();
+    }
+    function rod(){
+      if(scanAlpha<=0)return;
+      var x=target.x*W,y=target.y*H,r=target.r*zoom;
+      ctx.save();ctx.translate(x,y);ctx.rotate(Math.sin(t*0.5)*0.25+0.5);
+      ctx.shadowColor='rgba(255,176,32,'+(0.9*scanAlpha)+')';ctx.shadowBlur=22*scanAlpha;
+      ctx.fillStyle='rgba(255,193,84,'+(0.55*scanAlpha)+')';
+      var w=r*2.6,h=r*1.05,rad=h/2;
+      ctx.beginPath();
+      ctx.moveTo(-w/2+rad,-h/2);ctx.lineTo(w/2-rad,-h/2);ctx.arc(w/2-rad,0,rad,-1.5708,1.5708);
+      ctx.lineTo(-w/2+rad,h/2);ctx.arc(-w/2+rad,0,rad,1.5708,4.7124);ctx.closePath();ctx.fill();ctx.restore();
+    }
+    function draw(){
+      t+=0.016;ctx.clearRect(0,0,W,H);
+      if(microAlpha>0){
+        for(var i=0;i<particles.length;i++){
+          var p=particles[i];
+          p.x+=p.vx*0.00018;p.y+=p.vy*0.00018;
+          if(p.x<-.12)p.x=1.12;if(p.x>1.12)p.x=-.12;
+          if(p.y<-.12)p.y=1.12;if(p.y>1.12)p.y=-.12;
+          var wob=Math.sin(t*p.wob+p.phase)*4, sc=zoom*p.depth;
+          cell(p.x*W,p.y*H+wob,p.r*sc,p.hue,p.sat,microAlpha*(0.45+0.55*p.depth));
+        }
+        rod();
+      }
+      raf=requestAnimationFrame(draw);
+    }
+
+    if(reduce || !window.gsap){document.documentElement.classList.add('cine-static');return;}
+
+    gsap.registerPlugin(ScrollTrigger);
+    resize();init();raf=requestAnimationFrame(draw);
+
+    var conf={v:0}, confEl=document.getElementById('confCount'), prog=document.getElementById('progBar');
+
+    var tl=gsap.timeline({
+      defaults:{ease:'none'},
+      scrollTrigger:{
+        trigger:'#cine',start:'top top',end:'+=600%',pin:true,scrub:1,
+        onUpdate:function(self){
+          var p=self.progress;
+          microAlpha=clamp((p-0.52)/0.06,0,1)*(1-clamp((p-0.80)/0.08,0,1));
+          zoom=1+clamp((p-0.52)/0.30,0,1)*1.5;
+          scanAlpha=clamp((p-0.66)/0.06,0,1)*(1-clamp((p-0.78)/0.07,0,1));
+          if(prog)prog.style.width=(p*100).toFixed(1)+'%';
+        }
+      }
+    });
+
+    /* Scene 1 - pool zoom-in (≈3 wheel scrolls) */
+    tl.to('.pool-zoom',{scale:1.5,duration:.06},0)
+      .to('.scene-pool',{autoAlpha:0,duration:.04},.06)
+      /* Scene 1.5 - sampler (person) */
+      .fromTo('.scene-sampler',{autoAlpha:0},{autoAlpha:1,duration:.04},.08)
+      .fromTo('.sampler-photo',{scale:1.12},{scale:1,duration:.12},.08)
+      .to('.scene-sampler',{autoAlpha:0,duration:.04},.20)
+      /* Scene 2 - sampling close-up */
+      .fromTo('.scene-sampling',{autoAlpha:0},{autoAlpha:1,duration:.03},.22)
+      .fromTo('.sbottle',{y:-130},{y:0,duration:.05},.24)
+      .fromTo('.sbottle .fill',{height:'0%'},{height:'66%',duration:.05},.26)
+      .fromTo('.entry-ripple',{scale:.4,autoAlpha:.85},{scale:1.5,autoAlpha:0,duration:.05},.26)
+      .to('.sbottle',{y:-60,duration:.04},.32)
+      .to('.scene-sampling',{autoAlpha:0,duration:.04},.35)
+      /* Scene 3 - lab */
+      .fromTo('.scene-lab',{autoAlpha:0},{autoAlpha:1,duration:.04},.37)
+      .fromTo('.lab-vial.sample',{autoAlpha:0,y:-18},{autoAlpha:1,y:0,duration:.04},.39)
+      .fromTo('.lab-screen .line',{strokeDashoffset:600},{strokeDashoffset:0,duration:.07},.40)
+      .to('.scene-lab',{autoAlpha:0,duration:.04},.50)
+      /* enter microscope */
+      .fromTo('.scope-iris',{autoAlpha:1,scale:1},{scale:80,duration:.06,ease:'power1.in',immediateRender:false},.50)
+      .set('.scope-iris',{autoAlpha:0},.565)
+      /* Scene 4 - microscopic copy */
+      .fromTo('.micro-copy',{autoAlpha:0,y:30},{autoAlpha:1,y:0,duration:.05},.56)
+      .to('.micro-copy',{autoAlpha:0,duration:.05},.64)
+      /* Scene 5 - HUD scan */
+      .fromTo('.scene-hud',{autoAlpha:0},{autoAlpha:1,duration:.04},.66)
+      .fromTo('.reticle',{scale:1.8,autoAlpha:0},{scale:1,autoAlpha:1,duration:.04},.67)
+      .fromTo('.hud-panel',{autoAlpha:0,x:-30},{autoAlpha:1,x:0,duration:.04},.68)
+      .fromTo('.hud-meter .bar i',{width:'0%'},{width:'88%',duration:.06},.68)
+      .to(conf,{v:99.2,duration:.08,onUpdate:function(){confEl.textContent=conf.v.toFixed(1);}},.68)
+      .to('.scene-hud',{autoAlpha:0,duration:.04},.80)
+      /* Scene 6 - payoff */
+      .fromTo('.scene-payoff',{autoAlpha:0},{autoAlpha:1,duration:.06},.82)
+      .from('.payoff-line',{yPercent:120,duration:.05,stagger:.025},.84)
+      .from('.payoff-brand',{autoAlpha:0,y:20,duration:.04},.90)
+      .from('.payoff-chips span',{autoAlpha:0,y:14,stagger:.01,duration:.03},.92)
+      .from('.payoff-cta',{autoAlpha:0,y:16,duration:.04},.95);
+
+    window.addEventListener('resize',function(){resize();ScrollTrigger.refresh();},{passive:true});
+  })();
+  </script>
+</body>
+</html>

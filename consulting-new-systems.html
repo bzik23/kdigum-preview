@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ייעוץ להקמת מערכות מים חדשות | קיסר דיגום - תכנון למניעת לגיונלה וזיהומים</title>
+  <meta name="description" content="ייעוץ ליזמים, מתכננים וקבלנים בהקמת מערכות מים - תכנון נכון למניעת לגיונלה וזיהומים ובקרת זיהומים כבר משלב התכנון. מגובה בבדיקות במעבדות מוסמכות ISO 17025. קיסר דיגום, פריסה ארצית." />
+  <meta name="theme-color" content="#04111d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "ייעוץ להקמת מערכות מים חדשות",
+    "serviceType": "ייעוץ לתכנון והקמת מערכות מים בריאותיות",
+    "description": "ייעוץ ליזמים, מתכננים וקבלנים בהקמת מערכות מים - תכנון למניעת לגיונלה וזיהומים ובקרת זיהומים משלב התכנון. מגובה בבדיקות במעבדות מוסמכות ISO 17025.",
+    "areaServed": "IL",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "קיסר דיגום",
+      "telephone": "+972-54-8757575",
+      "url": "https://www.kdigum.co.il/"
+    }
+  }
+  </script>
+
+  <!-- page-only: softer orange accents (outline instead of solid fill) -->
+  <style>
+    /* "לפרטים מלאים" button on the flip cards - orange outline, not a full orange fill */
+    .flip-btn{
+      background:rgba(230,149,42,.12);
+      border:1.5px solid rgba(230,149,42,.85);
+      color:#fff;
+      box-shadow:none;
+    }
+    .service-card.flip-card:hover .flip-btn,
+    .service-card.flip-card:focus-visible .flip-btn{
+      background:rgba(230,149,42,.24);
+      border-color:var(--amber);
+    }
+
+    /* small section heading ("למי השירות מתאים") - orange instead of green */
+    .audience-title{color:var(--amber-600)}
+
+    /* audience chips - clean (no fill) at rest; soft green fill + gentle orange frame only on hover */
+    .audience-list .chip{
+      background:#fff;
+      border-color:rgba(67,175,73,.22);
+      color:var(--green-700);
+    }
+    .audience-list .chip:hover{
+      background:var(--green-tint);
+      border-color:rgba(230,149,42,.55);
+      color:var(--green-700);
+    }
+    .audience-list .chip svg{color:var(--green-500)}
+
+    /* "שליחה" + hero CTA buttons - gentle orange border on hover */
+    #leadForm .btn-primary,.hero-actions .btn-primary{border:1.5px solid transparent}
+    #leadForm .btn-primary:hover,.hero-actions .btn-primary:hover{
+      border-color:rgba(230,149,42,.85);
+      box-shadow:0 18px 40px rgba(67,175,73,.30),0 0 0 3px rgba(230,149,42,.16);
+    }
+
+    /* "נושאים מרכזיים" cards - a subtle orange frame as a light touch of warmth */
+    .topic{border:1px solid rgba(230,149,42,.30)}
+    .topic:hover{
+      border-color:rgba(230,149,42,.60);
+      box-shadow:var(--shadow),0 0 24px rgba(230,149,42,.12);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="קיסר דיגום - דף הבית">
+        <img class="logo-img" src="assets/kdigum-logo.png" alt="קיסר דיגום - שירותי דיגום ובדיקות מעבדה" />
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="תפריט ראשי">
+        <button class="nav-close" id="navClose" aria-label="סגירת תפריט">&times;</button>
+        <ul>
+          <li><a href="about.html">אודותינו</a></li>
+          <li class="has-mega">
+            <a href="index.html#services" class="dd-toggle">שירותי דיגום <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega">
+              <div class="mega-col">
+                <h4><a href="water-sampling.html">דיגום מים</a></h4>
+                <a href="legionella.html">בדיקות לגיונלה במים</a>
+                <a href="legionella-pcr.html">בדיקת לגיונלה מהירה PCR</a>
+                <a href="drinking-water.html">דיגום מי שתייה</a>
+                <a href="water-reservoirs.html">דיגום מאגרי מים</a>
+                <a href="pool-water.html">דיגום לבריכות שחייה</a>
+                <a href="mikveh-water.html">דיגום מי מקוואות</a>
+                <a href="dental-water.html">דיגום למרפאות שיניים</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="food-sampling.html">דיגום מזון</a></h4>
+                <a href="food-factories.html">בדיקות מזון למפעלים</a>
+                <a href="food-restaurants.html">בדיקות מזון למסעדות וקייטרינג</a>
+                <a href="food-importers.html">בדיקות מזון ליבואנים</a>
+                <a href="food-environmental.html">דיגום סביבתי במפעלי מזון</a>
+                <a href="food-sanitation.html">פיקוח תברואן מזון</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="wastewater-sampling.html">דיגום שפכים</a></h4>
+                <a href="wastewater-industry.html">דיגום שפכים לתעשייה</a>
+                <a href="wastewater-business.html">דיגום שפכים לעסקים ומוסדות</a>
+                <a href="wastewater-public.html">דיגום שפכים לגופים ציבוריים</a>
+                <a href="wastewater-composite.html">דיגום שפכים מורכב</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="disinfection.html">חיטוי וניקוי</a></h4>
+                <a href="disinfection-reservoirs.html">ניקוי וחיטוי מאגרי מים</a>
+                <a href="disinfection-pipes.html">ניקוי וחיטוי צנרת מים</a>
+                <a href="disinfection-mains.html">ניקוי וחיטוי קווי מים</a>
+                <a href="disinfection-recovery.html">ניקוי וחיטוי לאחר זיהום</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="consulting.html">ייעוץ</a></h4>
+                <a href="consulting-sampling-plan.html">בניית תוכנית דיגום</a>
+                <a href="consulting-outbreak.html">התנהלות בעת אירוע תחלואה</a>
+                <a href="consulting-new-systems.html">ייעוץ להקמת מערכות מים חדשות</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="backflow.html">מז"ח</a></li>
+          <li class="has-mega">
+            <a href="sectors.html" class="dd-toggle">פתרונות לפי ענף <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega mega-sectors">
+              <div class="mega-col">
+                <a href="sector-dental.html">מרפאות שיניים</a>
+                <a href="sector-hospitals.html">בתי חולים</a>
+                <a href="sector-eldercare.html">בתי אבות ודיור מוגן</a>
+              </div>
+              <div class="mega-col">
+                <a href="sector-hotels.html">בתי מלון</a>
+                <a href="sector-buildings.html">ועדי בתים</a>
+                <a href="sector-food.html">מפעלי מזון</a>
+              </div>
+              <div class="mega-col">
+                <a href="sector-restaurants.html">מסעדות וקייטרינג</a>
+                <a href="sector-mikveh.html">מקוואות</a>
+                <a href="sector-pools.html">בריכות שחייה</a>
+              </div>
+            </div>
+          </li>
+          <li class="has-mega">
+            <a href="index.html#knowledge" class="dd-toggle">מרכז הידע <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega mega-narrow">
+              <div class="mega-col">
+                <h4>מרכז הידע</h4>
+                <a href="index.html#knowledge">מידע מקצועי</a>
+                <a href="index.html#knowledge">סרטונים</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="forms.html">טפסים להורדה</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#" class="login-link" aria-label="כניסת לקוחות">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+          <span>כניסת לקוחות</span>
+        </a>
+        <a href="tel:089332299" class="phone-link" aria-label="חיוג למרכזייה 08-9332299">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span dir="ltr">08-9332299</span>
+        </a>
+        <a href="https://wa.me/972548757575" target="_blank" rel="noopener" class="btn-wa" aria-label="וואטסאפ - שליחת הודעה">
+          <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.7 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="פתיחת תפריט" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div class="page-hero-text">
+            <nav class="breadcrumb" aria-label="מיקום">
+              <a href="index.html">דף הבית</a>
+              <span class="sep" aria-hidden="true">›</span>
+              <a href="index.html#services">שירותי דיגום</a>
+              <span class="sep" aria-hidden="true">›</span>
+              <a href="consulting.html">ייעוץ</a>
+              <span class="sep" aria-hidden="true">›</span>
+              <span aria-current="page">מערכות מים חדשות</span>
+            </nav>
+            <h1>ייעוץ להקמת מערכות מים חדשות</h1>
+            <p class="ph-sub">הטעויות היקרות ביותר במערכת מים נולדות על שולחן השרטוטים. תכנון נכון מההתחלה - בלי מקטעים מתים, עם טמפרטורות ומחזוריות נכונות - מונע לגיונלה וזיהומים עוד לפני שהמערכת פועלת. קיסר דיגום מלווה יזמים, מתכננים וקבלנים בבקרת זיהומים משלב התכנון, מגובה בבדיקות במעבדה מוסמכת ISO 17025, בפריסה ארצית.</p>
+            <div class="hero-actions" style="margin-top:26px">
+              <a href="#contact" class="btn btn-primary btn-lg">לייעוץ בהקמת מערכת
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
+              </a>
+              <a href="tel:0548757575" class="btn btn-outline btn-lg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                חייגו: 054-8757575
+              </a>
+            </div>
+          </div>
+
+          <div class="page-hero-media">
+            <div class="sector-facts reveal">
+              <h2>במבט מהיר</h2>
+            <div class="sf-row">
+              <span class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13l2 2 4-4"/></svg></span>
+              <div class="sf-text"><small>מתי מתחילים</small><b>כבר משלב התכנון, לפני הביצוע</b></div>
+            </div>
+            <div class="sf-row">
+              <span class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div class="sf-text"><small>המטרה</small><b>מניעת לגיונלה וזיהומים בעיצוב המערכת</b></div>
+            </div>
+            <div class="sf-row">
+              <span class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <div class="sf-text"><small>למי מיועד</small><b>יזמים, מתכננים וקבלנים</b></div>
+            </div>
+            <div class="sf-row is-risk">
+              <span class="sf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg></span>
+              <div class="sf-text"><small>מה זה חוסך</small><b>תיקונים יקרים וכשלי בריאות אחרי ההקמה</b></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACCREDITATION STRIP ============ -->
+    <div class="accreditation">
+      <div class="container">
+        <svg class="ac-ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p>הייעוץ נשען על עקרונות <strong>בקרת זיהומים</strong>, על <strong>תקנות בריאות העם</strong> והנחיות <strong>משרד הבריאות</strong>, ומגובה בבדיקות במעבדה מוסמכת <strong class="iso-badge">ISO 17025</strong> תחת <strong>הרשות הלאומית להסמכת מעבדות</strong></p>
+      </div>
+    </div>
+
+    <!-- ============ INTRO + AUDIENCE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מערכות מים חדשות</span>
+          <h2>בריאות המים&nbsp;מתחילה בתכנון</h2>
+        </div>
+        <p class="svc-lead reveal">מערכת מים שתוכננה נכון כמעט שאינה מזמינה צרות. מקטעים מתים בצנרת, מאגרים מנותקים ממחזור, טמפרטורות פושרות וחומרים לא מתאימים - כל אלה נקבעים בשלב התכנון, והם הגורמים שמזמינים לגיונלה, ביופילם וזיהום בהמשך. תיקון שלהם אחרי ההקמה יקר, מורכב, ולעיתים בלתי אפשרי. קיסר דיגום מלווה יזמים, מתכננים וקבלנים כבר על שולחן השרטוטים: בחינת התכנון מנקודת מבט של בקרת זיהומים, המלצות למניעת לגיונלה והגדרת נקודות דיגום ובקרה למערכת העתידית.</p>
+
+        <div class="audience reveal">
+          <div class="audience-title">למי השירות מתאים</div>
+          <div class="audience-list">
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>יזמים</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>מתכננים ואדריכלים</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>קבלנים</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>בתי חולים בהקמה</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>בתי מלון חדשים</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>מבני מגורים גבוהים</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>מוסדות ציבור</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>מנהלי פרויקטים</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S INCLUDED ============ -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מה כולל השירות</span>
+          <h2>מה כולל הליווי בתכנון</h2>
+          <p>בקרת זיהומים על מערכת המים, מהשרטוט ועד הדיגום הראשון בהפעלה.</p>
+        </div>
+        <div class="cards-grid services-grid">
+          <article class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13l2 2 4-4"/></svg></span>
+            <h3>בחינת תכנון המערכת</h3>
+            <p>סקירת תכנית מערכת המים מנקודת מבט בריאותית - איתור מקטעים מתים, נקודות עיוורות וסיכוני זיהום פוטנציאליים.</p>
+          </article>
+          <a href="legionella.html" class="service-card reveal" aria-label="תכנון למניעת לגיונלה - לפרטים מלאים">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>תכנון למניעת לגיונלה</h3>
+            <p>המלצות לטמפרטורות, מחזוריות וחומרים נכונים, כדי שהמערכת לא תהפוך לכר התרבות ללגיונלה ולביופילם.</p>
+            <span class="svc-link">לפרטים מלאים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <article class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></svg></span>
+            <h3>הגדרת בקרת זיהומים</h3>
+            <p>שילוב עקרונות בקרת זיהומים בתכנון, כך שהמערכת תעמוד בדרישות הרגולטוריות כבר מהפעלתה הראשונה.</p>
+          </article>
+          <a href="consulting-sampling-plan.html" class="service-card reveal" aria-label="תוכנית דיגום למערכת חדשה - לפרטים מלאים">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3>תוכנית דיגום למערכת חדשה</h3>
+            <p>הגדרת נקודות הדיגום ותוכנית הניטור הראשונית למערכת, לאישור תקינות לפני אכלוס ולאורך הפעלתה.</p>
+            <span class="svc-link">לפרטים מלאים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHEN / HOW (reg-list) ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מתי נדרש</span>
+          <h2>מתי לשלב ייעוץ בתכנון?</h2>
+          <p>ככל שמשלבים את הייעוץ מוקדם יותר, כך הוא זול ויעיל יותר. אלה השלבים הקריטיים:</p>
+        </div>
+        <div class="reg-list">
+          <div class="reg-item reveal">
+            <span class="ri-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13l2 2 4-4"/></svg></span>
+            <div class="ri-text"><h3>שלב התכנון הראשוני</h3><p>בחינת התכנון לפני הביצוע היא הדרך הזולה ביותר למנוע סיכוני זיהום - שינוי בשרטוט עולה הרבה פחות משינוי בקיר.</p></div>
+            <span class="reg-freq">בתכנון</span>
+          </div>
+          <div class="reg-item reveal">
+            <span class="ri-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></span>
+            <div class="ri-text"><h3>מבנים ומוסדות רגישים</h3><p>בתי חולים, בתי מלון ומבני מגורים גבוהים עם מערכות מים מורכבות מחייבים תכנון קפדני במיוחד למניעת לגיונלה.</p></div>
+            <span class="reg-freq">בהקמה</span>
+          </div>
+          <div class="reg-item reveal">
+            <span class="ri-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></span>
+            <div class="ri-text"><h3>שדרוג או החלפת מערכת</h3><p>החלפת מערכת מים קיימת או שדרוג משמעותי הם הזדמנות לתקן ליקויי תכנון ישנים ולמנוע זיהומים חוזרים.</p></div>
+            <span class="reg-freq">בשדרוג</span>
+          </div>
+          <div class="reg-item reveal">
+            <span class="ri-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div class="ri-text"><h3>לפני אכלוס והפעלה</h3><p>לפני שמכניסים אנשים למבנה חדש, דיגום אימות מוודא שהמערכת נקייה ובטוחה לשימוש מהיום הראשון.</p></div>
+            <span class="reg-freq">לפני אכלוס</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RISK BAND ============ -->
+    <section class="section risk-band">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מה הסיכון</span>
+          <h2>מה עולה תכנון לקוי?</h2>
+          <p>ליקוי תכנון שלא טופל בזמן הופך לבעיה כרונית שנגררת לאורך כל חיי המבנה:</p>
+        </div>
+        <div class="risk-grid">
+          <article class="risk-card reveal">
+            <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+            <h3>מערכת שמזמינה לגיונלה</h3>
+            <p>מקטעים מתים, טמפרטורות פושרות ומחזוריות לקויה יוצרים תנאי התרבות ללגיונלה כבר מהיום הראשון של ההפעלה.</p>
+          </article>
+          <article class="risk-card reveal">
+            <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 17h6v-6"/><path d="m22 17-8.5-8.5-5 5L2 7"/></svg></span>
+            <h3>תיקונים יקרים בדיעבד</h3>
+            <p>תיקון ליקוי תכנון אחרי ההקמה מחייב פתיחת קירות, החלפת צנרת והשבתה - מה שעולה פי כמה משינוי בשרטוט.</p>
+          </article>
+          <article class="risk-card reveal">
+            <span class="rk-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2 4 7h16Z"/></svg></span>
+            <h3>אחריות היזם והקבלן</h3>
+            <p>מערכת שתוכננה בלי בקרת זיהומים חושפת את היזם ואת הקבלן לליקויים, לעיכוב באכלוס ולחבות במקרה תחלואה.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="legionella-band">
+      <div class="container band-inner reveal">
+        <div class="band-text">
+          <span class="eyebrow">תיאום ייעוץ</span>
+          <h2>מקימים מערכת מים חדשה?</h2>
+          <p>נלווה את התכנון מנקודת מבט של בקרת זיהומים, נמנע לגיונלה וזיהומים בעיצוב המערכת ונגדיר תוכנית דיגום להפעלה - בפריסה ארצית.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg">לייעוץ בהקמת מערכת</a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">דברו איתנו</span>
+          <h2>קבלו ייעוץ להקמת מערכת מים</h2>
+          <p>השאירו פרטים ונחזור אליכם בהקדם, או חייגו עכשיו לקבלת ייעוץ מקצועי.</p>
+          <ul class="contact-list">
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><small>נייד - שי שרמה</small><a href="tel:0548757575">054-8757575</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><div><small>משרד</small><a href="tel:089332299">08-9332299</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span><div><small>וואטסאפ</small><a href="https://wa.me/972548757575" target="_blank" rel="noopener">שליחת הודעה</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><small>אזור שירות</small><span class="ci-val">פריסה ארצית - ממטולה ועד אילת</span></div></li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="leadForm" novalidate>
+          <div class="field">
+            <label for="name">שם מלא *</label>
+            <input type="text" id="name" name="name" required placeholder="ישראל ישראלי" />
+          </div>
+          <div class="field">
+            <label for="phone">טלפון *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="050-0000000" />
+          </div>
+          <div class="field">
+            <label for="email">דוא"ל</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" />
+          </div>
+          <div class="field">
+            <label for="service">תחום השירות</label>
+            <select id="service" name="service">
+            <option value="">בחרו תחום…</option>
+            <option>דיגום מים</option>
+            <option>דיגום מזון</option>
+            <option>דיגום שפכים</option>
+            <option>חיטוי וניקוי</option>
+            <option>מז"ח</option>
+            <option selected>ייעוץ</option>
+            <option>אחר</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="message">הודעה</label>
+            <textarea id="message" name="message" rows="3" placeholder="ספרו לנו במה נוכל לעזור…"></textarea>
+          </div>
+          <div class="field field-full form-consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">אני מסכים/ה ל<a href="privacy-policy.html">מדיניות הפרטיות</a> של האתר.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">שליחה</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo">
+          <img class="logo-img" src="assets/kdigum-logo.png" alt="קיסר דיגום - שירותי דיגום ובדיקות מעבדה" />
+        </a>
+        <p>שירותי דיגום, בדיקות מעבדה וחיטוי מערכות מים בפריסה ארצית. הבדיקות מתבצעות במעבדות מוסמכות ISO 17025.</p>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <a href="water-sampling.html">דיגום מים</a><a href="food-sampling.html">דיגום מזון</a><a href="disinfection.html">חיטוי וניקוי</a><a href="wastewater-sampling.html">דיגום שפכים</a><a href="consulting.html">ייעוץ</a><a href="backflow.html">מז"ח</a>
+      </div>
+      <div class="footer-col">
+        <h4>ענפים</h4>
+        <a href="sector-dental.html">מרפאות שיניים</a><a href="sector-hospitals.html">בתי חולים</a><a href="sector-food.html">מפעלי מזון</a><a href="sector-hotels.html">בתי מלון</a><a href="sector-buildings.html">ועדי בתים</a>
+      </div>
+      <div class="footer-col">
+        <h4>יצירת קשר</h4>
+        <a href="tel:0548757575">נייד: 054-8757575</a>
+        <a href="tel:089332299">משרד: 08-9332299</a>
+        <a href="https://wa.me/972548757575" target="_blank" rel="noopener">וואטסאפ</a>
+        <p class="footer-accred">תחת הרשות הלאומית להסמכת מעבדות · ISO 17025</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© <span id="year"></span> קיסר דיגום - כל הזכויות שמורות. <span class="fb-legal"><a href="privacy-policy.html">מדיניות פרטיות</a> <span class="fb-sep" aria-hidden="true">|</span> <a href="accessibility.html">הצהרת נגישות</a></span></span>
+        <span>אתר לדוגמה · פרוטוטייפ עיצוב</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY BAR ============ -->
+  <div class="mobile-bar">
+    <a href="tel:0548757575"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>חיוג</a>
+    <a href="https://wa.me/972548757575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>וואטסאפ</a>
+    <a href="#contact" class="mb-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 5L2 7"/></svg>הצעת מחיר</a>
+  </div>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script src="script.js"></script>
+</body>
+</html>

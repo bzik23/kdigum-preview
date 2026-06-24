@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>קיסר דיגום | שירותי דיגום ובדיקות מעבדה - מים, מזון וחיטוי</title>
+  <meta name="description" content="קיסר דיגום - שירותי דיגום ובדיקות מעבדה לבקרת איכות המים, האוויר והסביבה. דיגום וחיטוי מערכות מים בפריסה ארצית, עם בדיקות במעבדות מוסמכות ISO 17025. בדיקת ליגיונלה דחופה תוך 24 שעות." />
+  <meta name="theme-color" content="#04111d" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="video" href="assets/hero-video.mp4" type="video/mp4" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "קיסר דיגום",
+    "description": "שירותי דיגום, בדיקות מעבדה וחיטוי מערכות מים. הבדיקות מתבצעות במעבדות מוסמכות ISO 17025.",
+    "telephone": "+972-54-8757575",
+    "areaServed": "IL",
+    "priceRange": "₪₪",
+    "url": "https://www.kdigum.co.il/"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="קיסר דיגום - דף הבית">
+        <img class="logo-img" src="assets/kdigum-logo.png" alt="קיסר דיגום - שירותי דיגום ובדיקות מעבדה" />
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="תפריט ראשי">
+        <button class="nav-close" id="navClose" aria-label="סגירת תפריט">&times;</button>
+        <ul>
+          <li><a href="about.html">אודותינו</a></li>
+          <li class="has-mega">
+            <a href="#services" class="dd-toggle">שירותי דיגום <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega">
+              <div class="mega-col">
+                <h4><a href="water-sampling.html">דיגום מים</a></h4>
+                <a href="legionella.html">בדיקות לגיונלה במים</a>
+                <a href="legionella-pcr.html">בדיקת לגיונלה מהירה PCR</a>
+                <a href="drinking-water.html">דיגום מי שתייה</a>
+                <a href="water-reservoirs.html">דיגום מאגרי מים</a>
+                <a href="pool-water.html">דיגום לבריכות שחייה</a>
+                <a href="mikveh-water.html">דיגום מי מקוואות</a>
+                <a href="dental-water.html">דיגום למרפאות שיניים</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="food-sampling.html">דיגום מזון</a></h4>
+                <a href="food-factories.html">בדיקות מזון למפעלים</a>
+                <a href="food-restaurants.html">בדיקות מזון למסעדות וקייטרינג</a>
+                <a href="food-importers.html">בדיקות מזון ליבואנים</a>
+                <a href="food-environmental.html">דיגום סביבתי במפעלי מזון</a>
+                <a href="food-sanitation.html">פיקוח תברואן מזון</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="wastewater-sampling.html">דיגום שפכים</a></h4>
+                <a href="wastewater-industry.html">דיגום שפכים לתעשייה</a>
+                <a href="wastewater-business.html">דיגום שפכים לעסקים ומוסדות</a>
+                <a href="wastewater-public.html">דיגום שפכים לגופים ציבוריים</a>
+                <a href="wastewater-composite.html">דיגום שפכים מורכב</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="disinfection.html">חיטוי וניקוי</a></h4>
+                <a href="disinfection-reservoirs.html">ניקוי וחיטוי מאגרי מים</a>
+                <a href="disinfection-pipes.html">ניקוי וחיטוי צנרת מים</a>
+                <a href="disinfection-mains.html">ניקוי וחיטוי קווי מים</a>
+                <a href="disinfection-recovery.html">ניקוי וחיטוי לאחר זיהום</a>
+              </div>
+              <div class="mega-col">
+                <h4><a href="consulting.html">ייעוץ</a></h4>
+                <a href="consulting-sampling-plan.html">בניית תוכנית דיגום</a>
+                <a href="consulting-outbreak.html">התנהלות בעת אירוע תחלואה</a>
+                <a href="consulting-new-systems.html">ייעוץ להקמת מערכות מים חדשות</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="backflow.html">מז"ח</a></li>
+          <li class="has-mega">
+            <a href="sectors.html" class="dd-toggle">פתרונות לפי ענף <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega mega-sectors">
+              <div class="mega-col">
+                <a href="sector-dental.html">מרפאות שיניים</a>
+                <a href="sector-hospitals.html">בתי חולים</a>
+                <a href="sector-eldercare.html">בתי אבות ודיור מוגן</a>
+              </div>
+              <div class="mega-col">
+                <a href="sector-hotels.html">בתי מלון</a>
+                <a href="sector-buildings.html">ועדי בתים</a>
+                <a href="sector-food.html">מפעלי מזון</a>
+              </div>
+              <div class="mega-col">
+                <a href="sector-restaurants.html">מסעדות וקייטרינג</a>
+                <a href="sector-mikveh.html">מקוואות</a>
+                <a href="sector-pools.html">בריכות שחייה</a>
+              </div>
+            </div>
+          </li>
+          <li class="has-mega">
+            <a href="knowledge.html" class="dd-toggle">מרכז הידע <span class="caret" aria-hidden="true">▾</span></a>
+            <div class="mega mega-narrow">
+              <div class="mega-col">
+                <h4>מרכז הידע</h4>
+                <a href="knowledge.html">מידע מקצועי</a>
+                <a href="knowledge.html">סרטונים</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="forms.html">טפסים להורדה</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="#" class="login-link" aria-label="כניסת לקוחות">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+          <span>כניסת לקוחות</span>
+        </a>
+        <a href="tel:089332299" class="phone-link" aria-label="חיוג למרכזייה 08-9332299">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span dir="ltr">08-9332299</span>
+        </a>
+        <a href="https://wa.me/972548757575" target="_blank" rel="noopener" class="btn-wa" aria-label="וואטסאפ - שליחת הודעה">
+          <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 438.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.7 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.4-5-3.8-10.5-6.6z"/></svg>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="פתיחת תפריט" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO (static · video centerpiece) ============ -->
+    <section class="hero" id="hero" aria-label="קיסר דיגום - דיגום ובקרת איכות מים">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="glow g1"></span><span class="glow g2"></span><span class="grid"></span>
+      </div>
+
+      <!-- full-bleed video - the clip IS the hero background (no frame, no box) -->
+      <div class="hero-video-bg" aria-hidden="true">
+        <!-- ambient blurred fill - extends the scene edge-to-edge so the whole hero
+             (incl. the left rail area) reads as one continuous video, no empty zones -->
+        <video class="hero-video-fill" autoplay muted loop playsinline preload="auto" tabindex="-1">
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        <!-- crisp focal clip - the whole frame, slightly reduced, feathered all around -->
+        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto">
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="container hero-inner">
+        <!-- content (right in RTL) -->
+        <div class="hero-content">
+          <h1 class="fade-up">מהמים שלכם<br><span class="accent">לא משאירים ספק</span></h1>
+          <p class="hero-sub fade-up" style="--d:.08s">דיגום, בדיקה, איתור סיכונים והגנה על בריאות הציבור</p>
+          <p class="hero-lead fade-up" style="--d:.16s">קיסר דיגום - פתרונות מתקדמים לבקרת איכות המים, האוויר והסביבה, לעסקים, מוסדות וארגונים.</p>
+          <div class="hero-actions fade-up" style="--d:.24s">
+            <a href="#contact" class="btn btn-primary btn-lg">השאירו פרטים
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
+            </a>
+            <a href="tel:0548757575" class="btn btn-outline btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              חייגו אלינו
+            </a>
+          </div>
+          <div class="hero-stats fade-up" style="--d:.32s">
+            <div class="hstat">
+              <span class="hs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span><b>מעבדות מוסמכות</b><small>מהרשות הלאומית להסמכת מעבדות</small></span>
+            </div>
+            <div class="hstat">
+              <span class="hs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg></span>
+              <span><b>תקן מחמיר</b><small>ISO 17025</small></span>
+            </div>
+            <div class="hstat">
+              <span class="hs-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <span><b>בדיקת PCR</b><small>תוצאה תוך 24 שעות</small></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- middle spacer - the video now fills the entire hero as its background -->
+        <div class="hero-stage" aria-hidden="true"></div>
+
+        <!-- service rail (far left) -->
+        <ul class="hero-rail fade-up" style="--d:.4s" aria-label="תחומי דיגום">
+          <li class="active">
+            <span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></span>
+            <span class="r-label">דיגום מים</span>
+          </li>
+          <li>
+            <span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2v20M5 9c2 0 3-1 3-3.5S7 2 5 2M19 2c-1.6 0-2.6 1.7-2.6 4.5S17.4 11 19 11v11"/></svg></span>
+            <span class="r-label">דיגום מזון</span>
+          </li>
+          <li>
+            <span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7c.6.5 1.2 1 2.5 1C7 8 7 6 9.5 6c2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 13c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 19c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/></svg></span>
+            <span class="r-label">דיגום מי שפכים</span>
+          </li>
+          <li>
+            <span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 9c1.4 1.8 2.3 3 2.3 4a2.3 2.3 0 1 1-4.6 0c0-1 .9-2.2 2.3-4Z"/></svg></span>
+            <span class="r-label">חיטוי מקורות מים</span>
+          </li>
+          <li>
+            <span class="r-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span>
+            <span class="r-label">ייעוץ</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- process flow pill -->
+      <div class="process-flow">
+        <div class="container">
+          <div class="pf-panel">
+            <!-- linear stage -->
+            <div class="pf-step reveal">
+              <span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></span>
+              <b>מקורות</b>
+              <small class="pf-src"><span>מים</span><span>מזון</span><span>אוויר</span><span>שפכים</span></small>
+            </div>
+            <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+            <div class="pf-step reveal">
+              <span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="8" width="10" height="13" rx="2"/><path d="M9 8V4h6v4M8 12h8"/></svg></span>
+              <b>לקיחת דגימה</b>
+            </div>
+            <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+            <div class="pf-step reveal">
+              <span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .24.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.76-2.96l5.52-10.08A2 2 0 0 0 10 8V2"/><path d="M6.45 15h11.1M8.5 2h7"/></svg></span>
+              <b>בדיקה במעבדה</b>
+              <small>מוסמכת ISO 17025</small>
+            </div>
+            <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+            <div class="pf-step reveal">
+              <span class="pf-ico" id="pfAnalyzeIco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
+              <b>ניתוח תוצאות</b>
+            </div>
+
+            <!-- decision splits into two parallel lanes. Every connector is the SAME
+                 chevron arrow as the linear flow above - no diagonals, no curves. -->
+            <div class="pf-branch reveal">
+              <!-- top lane: clean result -->
+              <span class="pf-conn pf-fork pf-fork-up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+              <span class="pf-tag ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4L15.5 9"/></svg>אין חיידקים</span>
+              <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+              <div class="pf-step pf-step-sm">
+                <span class="pf-ico ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></span>
+                <b>אישור תקינות</b>
+              </div>
+              <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+
+              <!-- bottom lane: contamination found → professional treatment -->
+              <span class="pf-conn pf-fork pf-fork-down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+              <span class="pf-tag warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h16.9a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>יש חיידקים</span>
+              <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+              <div class="pf-step pf-step-sm">
+                <span class="pf-ico fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 21h5A1.5 1.5 0 0 0 15 19.5V13a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v6.5A1.5 1.5 0 0 0 8.5 21Z"/><path d="M10 10V7h3"/><path d="M13 5.3h3.4"/><path d="M19 4 20.2 2.9M19.5 6h1.6M19 8l1.2 1.1"/></svg></span>
+                <b>חיטוי וניקוי מקצועי</b>
+              </div>
+              <span class="pf-conn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></span>
+            </div>
+
+            <!-- final outcome: both lanes lead here -->
+            <div class="pf-step reveal">
+              <span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <b>הגנה על הבריאות</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACCREDITATION STRIP ============ -->
+    <div class="accreditation" id="accreditation">
+      <div class="container">
+        <svg class="ac-ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <p>כלל הבדיקות מתבצעות תחת <strong>הרשות הלאומית להסמכת מעבדות</strong> ובקרת <strong>משרד הבריאות</strong> · בדיקות במעבדות מוסמכות <strong class="iso-badge">ISO 17025</strong></p>
+      </div>
+    </div>
+
+    <!-- ============ SERVICES (SCROLL section) ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מה אנחנו עושים</span>
+          <h2>תחומי הפעילות שלנו</h2>
+          <p>פתרון מקיף לדיגום, בדיקות מעבדה, ניטור וחיטוי - לכל סוגי המים, המזון והסביבה.</p>
+        </div>
+        <div class="cards-grid services-grid">
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></span>
+            <h3>דיגום מים</h3>
+            <p>בדיקות מי שתייה, בריכות, מקוואות ומערכות מים - ברמה א'+ב'.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span>
+            <h3>דיגום ליגיונלה</h3>
+            <p>איתור חיידק הליגיונלה ובדיקת PCR מהירה - תוצאה תוך 24 שעות.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2v20M5 9c2 0 3-1 3-3.5S7 2 5 2M19 2c-1.6 0-2.6 1.7-2.6 4.5S17.4 11 19 11v11"/></svg></span>
+            <h3>דיגום מזון</h3>
+            <p>בדיקות מעבדה למזון: סלמונלה, ליסטריה ופתוגנים - כולל בדיקה דחופה.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7c.6.5 1.2 1 2.5 1C7 8 7 6 9.5 6c2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 13c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/><path d="M2 19c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 1.3 0 1.9-.5 2.5-1"/></svg></span>
+            <h3>דיגום שפכים</h3>
+            <p>דיגום ובדיקות שפכים למפעלים, רשויות ותאגידי מים.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2M9.8 4.4A2 2 0 1 1 11 8H2"/></svg></span>
+            <h3>דיגום אוויר</h3>
+            <p>ניטור מיקרוביאלי באוויר למפעלי מזון וסביבות ייצור סטריליות.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8Z"/><path d="M5 8 7 4h10l2 4M9 13h6"/></svg></span>
+            <h3>חיטוי מאגרי מים</h3>
+            <p>ניקוי וחיטוי מאגרים בבניינים מעל 4 קומות + דיגום אימות.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9a4 4 0 0 1 0 8h-2M4 8 7 5M4 8l3 3M9 20h7"/></svg></span>
+            <h3>חיטוי צנרת</h3>
+            <p>חיטוי וניקוי צנרת + אישור חיטוי לקבלת טופס 4.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+          <a href="#" class="service-card reveal">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></span>
+            <h3>מז"ח - מניעת זרימה חוזרת</h3>
+            <p>אספקה, התקנה ובדיקה שנתית של מתקני מז"ח.</p>
+            <span class="svc-link">לפרטים <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">היתרון שלנו</span>
+          <h2>למה לבחור בקיסר דיגום</h2>
+          <p>סמכות מקצועית שעובדת מול הגופים המחמירים ביותר בישראל - מבתי חולים ועד רשויות.</p>
+        </div>
+        <div class="cards-grid features-grid">
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg></span><h3>ניסיון מקצועי</h3><p>שנים של ניסיון מול מוסדות, מפעלים וגופים ממשלתיים.</p></div>
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><h3>פריסה ארצית</h3><p>שירות בכל הארץ, ממטולה ועד אילת.</p></div>
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span><h3>מעבדות מוסמכות</h3><p>בדיקות תחת תקן ISO 17025 ובקרת משרד הבריאות.</p></div>
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5a.5.5 0 0 0 .4.8H11l-1 7.7 8.5-11.5a.5.5 0 0 0-.4-.8H12l1-7.7Z"/></svg></span><h3>בדיקות דחופות</h3><p>תוצאות מהירות, כולל ליגיונלה ומזון תוך 24 שעות.</p></div>
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><h3>זמינות גבוהה</h3><p>מענה מהיר ותיאום דיגום בלוחות זמנים קצרים.</p></div>
+          <div class="feature reveal"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><h3>ליווי מקצועי</h3><p>ייעוץ תברואתי ובניית תוכניות דיגום מותאמות.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTS SLIDER ============ -->
+    <section class="section clients" aria-labelledby="clients-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">לקוחות ממליצים</span>
+          <h2 id="clients-title">חלק מלקוחותינו</h2>
+          <p>מבתי חולים ורשויות מקומיות ועד צה"ל, מוסדות חינוך ומפעלי מזון - גופים שלא מתפשרים על איכות המים בוטחים בקיסר דיגום.</p>
+        </div>
+
+        <div class="clients-slider reveal" data-clients>
+          <button type="button" class="cs-arrow cs-prev" aria-label="הלקוחות הקודמים">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+
+          <div class="cs-viewport">
+            <ul class="cs-track" dir="ltr">
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></span><span class="cl-name">עיריית תל אביב-יפו</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3a1 1 0 0 0-1 1v5H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-5h5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-1-1h-2Z"/></svg></span><span class="cl-name">בית חולים איכילוב</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="cl-name">צה"ל</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3a1 1 0 0 0-1 1v5H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-5h5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-1-1h-2Z"/></svg></span><span class="cl-name">משרד הבריאות</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><span class="cl-name">משרד החינוך - בתי הספר</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M3.5 12H8l1-2 2 4 1.5-2H20.5"/></svg></span><span class="cl-name">שירותי בריאות כללית</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M3.5 12H8l1-2 2 4 1.5-2H20.5"/></svg></span><span class="cl-name">מכבי שירותי בריאות</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3a1 1 0 0 0-1 1v5H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-5h5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-1-1h-2Z"/></svg></span><span class="cl-name">המרכז הרפואי שיבא</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5M2 18v2M22 18v2M2 13h20M6 11V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg></span><span class="cl-name">רשת מלונות דן</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></span><span class="cl-name">עיריית ירושלים</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5C10.5 4 8 3.5 6.5 4.5 5 5.5 4 7 4 9c0 3 1 5 1.6 8 .4 1.8 2.1 1.7 2.5 0l.9-3c.3-1 1.7-1 2 0l.9 3c.4 1.7 2.1 1.8 2.5 0 .6-3 1.6-5 1.6-8 0-2-1-3.5-2.5-4.5C16 3.5 13.5 4 12 5.5Z"/></svg></span><span class="cl-name">רשת מרפאות שיניים</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M3.5 12H8l1-2 2 4 1.5-2H20.5"/></svg></span><span class="cl-name">אסותא מרכזים רפואיים</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V5l6 3v13H3Z"/><path d="M8 21v-4M14 21v-4"/></svg></span><span class="cl-name">תנובה</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l6 4V9l6 4V5l6 3v13H3Z"/><path d="M8 21v-4M14 21v-4"/></svg></span><span class="cl-name">שטראוס גרופ</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M15 7h.01M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></span><span class="cl-name">עיריית חיפה</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 10v6"/></svg></span><span class="cl-name">אוניברסיטת תל אביב</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="13" rx="2"/><path d="M5 11h14M9 7h6M8.5 16l-2 4M15.5 16l2 4"/><path d="M9 19h.01M15 19h.01"/></svg></span><span class="cl-name">רכבת ישראל</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M12 6v15M5 14a7 7 0 0 0 14 0M4 14h2M18 14h2"/></svg></span><span class="cl-name">נמל אשדוד</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5.5 12 3c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></span><span class="cl-name">חברת מקורות</span></li>
+              <li class="client-logo"><span class="cl-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3a1 1 0 0 0-1 1v5H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h5v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-5h5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-5V4a1 1 0 0 0-1-1h-2Z"/></svg></span><span class="cl-name">בית חולים הדסה</span></li>
+            </ul>
+          </div>
+
+          <button type="button" class="cs-arrow cs-next" aria-label="הלקוחות הבאים">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+          </button>
+        </div>
+
+        <p class="clients-note">* הלוגואים מוצגים כהדמיה זמנית ויוחלפו בלוגואים הרשמיים של הלקוחות.</p>
+      </div>
+    </section>
+
+    <!-- ============ LEGIONELLA BAND ============ -->
+    <section class="legionella-band">
+      <div class="container band-inner reveal">
+        <div class="band-text">
+          <span class="eyebrow">בדיקה דחופה</span>
+          <h2>חשד לחיידק ליגיונלה?</h2>
+          <p>בדיקת ליגיונלה <strong>PCR / BCR</strong> עם תוצאה תוך <strong>24 שעות</strong> ואף פחות - קריטי למרפאות שיניים, בתי מלון ומוסדות רפואיים.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg">לבדיקת ליגיונלה דחופה</a>
+      </div>
+    </section>
+
+    <!-- ============ SECTORS ============ -->
+    <section class="section" id="sectors">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">לכל ארגון</span>
+          <h2>פתרונות מותאמים לפי ענף</h2>
+          <p>אנחנו מכירים את הרגולציה והצרכים הייחודיים של כל סקטור.</p>
+        </div>
+        <div class="cards-grid sectors-grid">
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3C5.8 3 4.5 4.8 4.5 7.5c0 4 1 7.2 1.9 10 .5 1.6 1.7 1.6 2.1 0l1-4c.2-.9 1.6-.9 1.8 0l1 4c.4 1.6 1.6 1.6 2.1 0 .9-2.8 1.9-6 1.9-10C17.5 4.8 16.2 3 14 3c-1.4 0-2.2.8-3 1.5C10.2 3.8 9.4 3 8 3Z"/></svg></span><h3>מרפאות שיניים</h3><p>מניעת ליגיונלה ביוניט וחיטוי מערכות מים.</p></a>
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M3 22h18M9 22v-4h6v4M12 7v4M10 9h4"/></svg></span><h3>בתי חולים</h3><p>דיגום חודשי, ניטור וחיטוי בעת ממצא.</p></a>
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4V10l6 4V8l6-2v15H3Z"/><path d="M8 21v-4M13 21v-4M18 21v-4"/></svg></span><h3>תעשיית המזון</h3><p>בדיקות מזון, משטחים ואוויר - כולל דחוף.</p></a>
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M7 8h.01M7 12h.01M11 8h.01M11 12h.01M9 21v-4h2v4"/></svg></span><h3>בתי מלון</h3><p>ניטור ליגיונלה ואיכות מים למערכות גדולות.</p></a>
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span><h3>בתי אבות ודיור מוגן</h3><p>הגנה על אוכלוסייה בסיכון.</p></a>
+          <a href="#" class="sector-card reveal"><span class="sec-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18M6 22h12M10 6h4M10 10h4M10 14h4M10 18h4"/></svg></span><h3>ועדי בתים ואחזקה</h3><p>בדיקה וחיטוי שנתי למאגרי מים.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="container stats-grid reveal">
+        <div class="stat"><span class="num" data-target="8" data-suffix="+">0</span><span class="label">שנות ניסיון</span></div>
+        <div class="stat"><span class="num" data-target="500" data-suffix="+">0</span><span class="label">לקוחות מוסדיים</span></div>
+        <div class="stat"><span class="num" data-target="50000" data-suffix="+">0</span><span class="label">בדיקות בשנה</span></div>
+        <div class="stat"><span class="num" data-target="24" data-suffix=" ש'">0</span><span class="label">לתוצאה דחופה</span></div>
+        <div class="stat"><span class="num" data-target="100" data-suffix="%">0</span><span class="label">בקרת משרד הבריאות</span></div>
+      </div>
+    </section>
+
+    <!-- ============ KNOWLEDGE ============ -->
+    <section class="section section-alt" id="knowledge">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">מרכז הידע</span>
+          <h2>מידע מקצועי שכדאי להכיר</h2>
+          <p>מדריכים, תקנות ושאלות נפוצות בעולם הדיגום והבדיקות.</p>
+        </div>
+        <div class="cards-grid knowledge-grid">
+
+          <!-- 1 · ליגיונלה -->
+          <a href="post-legionella.html" class="post-card reveal">
+            <div class="post-media cv-legionella">
+              <img class="pm-cover" src="assets/articles/legionella-cover.svg" alt="איור: חיידק ליגיונלה במערכת מים ובדיקתו במעבדה" loading="lazy" decoding="async" />
+            </div>
+            <div class="post-body">
+              <span class="post-tag">ליגיונלה</span>
+              <h3>מהו חיידק הליגיונלה ולמה הוא מסוכן?</h3>
+              <p>כל מה שצריך לדעת על החיידק, דרכי ההדבקה, אוכלוסיות בסיכון והתקן הישראלי לבדיקה.</p>
+              <span class="read-more svc-link">קראו עוד <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+            </div>
+          </a>
+
+          <!-- 2 · בדיקות מים -->
+          <a href="post-water-grades.html" class="post-card reveal">
+            <div class="post-media cv-water">
+              <img class="pm-cover" src="assets/articles/water-grades-cover.svg" alt="איור: השוואת בדיקת מי שתייה רמה א' מול רמה ב'" loading="lazy" decoding="async" />
+            </div>
+            <div class="post-body">
+              <span class="post-tag">בדיקות מים</span>
+              <h3>בדיקת מי שתייה רמה א' מול רמה ב'</h3>
+              <p>מה ההבדל בין הבדיקות, מתי כל אחת נדרשת וכל כמה זמן חובה לבצע אותן.</p>
+              <span class="read-more svc-link">קראו עוד <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+            </div>
+          </a>
+
+          <!-- 3 · חיטוי צנרת -->
+          <a href="post-pipe-disinfection-form4.html" class="post-card reveal">
+            <div class="post-media cv-pipes">
+              <img class="pm-cover" src="assets/articles/pipe-disinfection-form4-cover.svg" alt="איור: חיטוי צנרת מים ואישור לטופס 4" loading="lazy" decoding="async" />
+            </div>
+            <div class="post-body">
+              <span class="post-tag">חיטוי צנרת</span>
+              <h3>אישור חיטוי צנרת לטופס 4 - מדריך לקבלן</h3>
+              <p>מה נדרש מקבלן לפני אכלוס, איך מתנהל תהליך החיטוי ואילו מסמכים מקבלים.</p>
+              <span class="read-more svc-link">קראו עוד <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+        <div class="section-cta reveal" style="text-align:center;margin-top:38px">
+          <a href="knowledge.html" class="btn btn-outline btn-lg">לכל המאמרים
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">דברו איתנו</span>
+          <h2>קבלו הצעת מחיר</h2>
+          <p>השאירו פרטים ונחזור אליכם בהקדם, או חייגו עכשיו לקבלת ייעוץ מקצועי.</p>
+          <ul class="contact-list">
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><div><small>נייד - שי שרמה</small><a href="tel:0548757575">054-8757575</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><div><small>משרד</small><a href="tel:089332299">08-9332299</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span><div><small>וואטסאפ</small><a href="https://wa.me/972548757575" target="_blank" rel="noopener">שליחת הודעה</a></div></li>
+            <li><span class="ci-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><small>אזור שירות</small><span class="ci-val">פריסה ארצית - ממטולה ועד אילת</span></div></li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="leadForm" novalidate>
+          <div class="field">
+            <label for="name">שם מלא *</label>
+            <input type="text" id="name" name="name" required placeholder="ישראל ישראלי" />
+          </div>
+          <div class="field">
+            <label for="phone">טלפון *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="050-0000000" />
+          </div>
+          <div class="field">
+            <label for="email">דוא"ל</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" />
+          </div>
+          <div class="field">
+            <label for="service">תחום השירות</label>
+            <select id="service" name="service">
+              <option value="">בחרו תחום…</option>
+              <option>דיגום מים</option>
+              <option>דיגום מזון</option>
+              <option>דיגום שפכים</option>
+              <option>חיטוי וניקוי</option>
+              <option>מז"ח</option>
+              <option>אחר</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="message">הודעה</label>
+            <textarea id="message" name="message" rows="3" placeholder="ספרו לנו במה נוכל לעזור…"></textarea>
+          </div>
+          <div class="field field-full form-consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">אני מסכים/ה ל<a href="privacy-policy.html">מדיניות הפרטיות</a> של האתר.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">שליחה</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#" class="logo">
+          <img class="logo-img" src="assets/kdigum-logo.png" alt="קיסר דיגום - שירותי דיגום ובדיקות מעבדה" />
+        </a>
+        <p>שירותי דיגום, בדיקות מעבדה וחיטוי מערכות מים בפריסה ארצית. הבדיקות מתבצעות במעבדות מוסמכות ISO 17025.</p>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <a href="#">דיגום מים</a><a href="#">דיגום ליגיונלה</a><a href="#">דיגום מזון</a><a href="#">חיטוי מאגרים</a><a href="#">מז"ח</a>
+      </div>
+      <div class="footer-col">
+        <h4>ענפים</h4>
+        <a href="#">מרפאות שיניים</a><a href="#">בתי חולים</a><a href="#">תעשיית המזון</a><a href="#">בתי מלון</a><a href="#">ועדי בתים</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>יצירת קשר</h4>
+        <span class="fc-addr">רחוב אלי הורוביץ 19, רחובות (קומה 1)</span>
+        <a href="tel:0548757575">נייד: 054-8757575</a>
+        <a href="tel:089332299">משרד: 08-9332299</a>
+        <a href="https://wa.me/972548757575" target="_blank" rel="noopener">וואטסאפ</a>
+        <a class="fc-line fc-waze" href="https://waze.com/ul?q=%D7%90%D7%9C%D7%99%20%D7%94%D7%95%D7%A8%D7%95%D7%91%D7%99%D7%A5%2019%20%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA&navigate=yes" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+          ניווט בוויז
+        </a>
+      </div>
+      <div class="footer-col footer-map-col">
+        <div class="footer-map">
+          <iframe title="מפת הגעה - רחוב אלי הורוביץ 19, רחובות" src="https://www.google.com/maps?q=%D7%90%D7%9C%D7%99%20%D7%94%D7%95%D7%A8%D7%95%D7%91%D7%99%D7%A5%2019%20%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA&hl=he&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="footer-accred">תחת הרשות הלאומית להסמכת מעבדות · ISO 17025</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© <span id="year"></span> קיסר דיגום - כל הזכויות שמורות. <span class="fb-legal"><a href="privacy-policy.html">מדיניות פרטיות</a> <span class="fb-sep" aria-hidden="true">|</span> <a href="accessibility.html">הצהרת נגישות</a></span></span>
+        <span>האתר נבנה ע"י בזיק - שיווק דיגיטלי</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MOBILE STICKY BAR ============ -->
+  <div class="mobile-bar">
+    <a href="tel:0548757575"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>חיוג</a>
+    <a href="https://wa.me/972548757575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>וואטסאפ</a>
+    <a href="#contact" class="mb-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 7-10 5L2 7"/></svg>הצעת מחיר</a>
+  </div>
+
+  <div class="nav-overlay" id="navOverlay"></div>
+  <script src="script.js"></script>
+</body>
+</html>

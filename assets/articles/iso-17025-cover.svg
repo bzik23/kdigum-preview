@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="מעבדה מוסמכת ISO 17025">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f6e27"/><stop offset="1" stop-color="#43af49"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="-0.08" r="0.95">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/><stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shade" cx="0.06" cy="1.12" r="0.95">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.30"/><stop offset="0.6" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1.3"/>
+    </pattern>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect width="1200" height="720" fill="url(#grid)"/>
+  <rect width="1200" height="720" fill="url(#glow)"/>
+  <rect width="1200" height="720" fill="url(#shade)"/>
+
+  <g fill="#ffffff">
+    <circle cx="170" cy="150" r="9" opacity="0.16"/>
+    <circle cx="1040" cy="190" r="14" opacity="0.12"/>
+    <circle cx="990" cy="560" r="8" opacity="0.16"/>
+    <circle cx="250" cy="585" r="12" opacity="0.10"/>
+  </g>
+
+  <circle cx="600" cy="360" r="208" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.5"/>
+  <circle cx="600" cy="360" r="208" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="14"/>
+
+  <!-- certificate page behind -->
+  <g filter="url(#soft)" transform="rotate(-7 560 350)">
+    <rect x="452" y="250" width="196" height="244" rx="14" fill="#ffffff" fill-opacity="0.92"/>
+    <g stroke="#1f6e27" stroke-opacity="0.4" stroke-width="6" stroke-linecap="round">
+      <line x1="486" y1="300" x2="614" y2="300"/><line x1="486" y1="330" x2="614" y2="330"/>
+      <line x1="486" y1="360" x2="560" y2="360"/>
+    </g>
+  </g>
+
+  <!-- rosette seal -->
+  <g filter="url(#soft)" transform="translate(660 372)">
+    <!-- scalloped edge via rotated triangles -->
+    <g fill="#e6952a">
+      <circle r="74"/>
+      <g transform="rotate(0)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(40)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(80)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(120)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(160)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(200)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(240)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(280)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+      <g transform="rotate(320)"><path d="M0 -86 12 -70 -12 -70Z"/></g>
+    </g>
+    <circle r="74" fill="#1f6e27"/>
+    <circle r="56" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+    <path d="M-26 2 -8 22 28 -22" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- ribbon tails -->
+    <path d="M-30 66 -52 132 -16 116 -2 150 18 80Z" fill="#e6952a"/>
+    <path d="M30 66 52 132 16 116 2 150 -18 80Z" fill="#cf7e16"/>
+  </g>
+
+  <!-- ISO label -->
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="800" text-anchor="middle">
+    <rect x="556" y="496" width="208" height="40" rx="20" fill="#0f2a42" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="660" y="523" font-size="24" letter-spacing="2" fill="#ffffff">ISO 17025</text>
+  </g>
+</svg>

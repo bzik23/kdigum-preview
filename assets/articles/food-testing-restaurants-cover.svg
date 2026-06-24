@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" width="1200" height="720" role="img" aria-label="בדיקות מזון ומשטחים למסעדות וקייטרינג">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f8a36"/><stop offset="1" stop-color="#86a32a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="-0.08" r="0.95">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/><stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shade" cx="0.06" cy="1.12" r="0.95">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.32"/><stop offset="0.6" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1.3"/>
+    </pattern>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect width="1200" height="720" fill="url(#grid)"/>
+  <rect width="1200" height="720" fill="url(#glow)"/>
+  <rect width="1200" height="720" fill="url(#shade)"/>
+
+  <g fill="#ffffff">
+    <circle cx="170" cy="150" r="9" opacity="0.16"/>
+    <circle cx="1040" cy="190" r="14" opacity="0.12"/>
+    <circle cx="990" cy="560" r="8" opacity="0.16"/>
+    <circle cx="250" cy="585" r="12" opacity="0.10"/>
+    <circle cx="120" cy="420" r="6" opacity="0.18"/>
+  </g>
+
+  <circle cx="600" cy="360" r="208" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.5"/>
+  <circle cx="600" cy="360" r="208" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="14"/>
+
+  <!-- plate -->
+  <g filter="url(#soft)">
+    <circle cx="572" cy="338" r="98" fill="#0f2a42" fill-opacity="0.42" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="572" cy="338" r="66" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="4"/>
+  </g>
+  <!-- fork -->
+  <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" filter="url(#soft)">
+    <line x1="430" y1="262" x2="430" y2="300"/><line x1="446" y1="262" x2="446" y2="300"/><line x1="462" y1="262" x2="462" y2="300"/>
+    <path d="M430 300h32" /><line x1="446" y1="300" x2="446" y2="418"/>
+  </g>
+  <!-- knife -->
+  <g filter="url(#soft)">
+    <path d="M704 258c14 6 14 70 4 96-4 10-12 12-12 2v-86c0-10 5-15 8-12Z" fill="#ffffff"/>
+    <line x1="700" y1="356" x2="700" y2="418" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- swab + petri dish (lab test) -->
+  <g filter="url(#soft)">
+    <line x1="612" y1="498" x2="664" y2="446" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="606" cy="504" r="14" fill="#e6952a"/>
+    <ellipse cx="690" cy="500" rx="58" ry="40" fill="#0f2a42" fill-opacity="0.45" stroke="#ffffff" stroke-width="5"/>
+    <g fill="#86db8b"><circle cx="676" cy="492" r="7"/><circle cx="704" cy="498" r="5.5"/><circle cx="688" cy="512" r="6"/></g>
+  </g>
+</svg>
