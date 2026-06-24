@@ -620,7 +620,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- Nav overlay ---------- */
-.nav-overlay{display:none;position:fixed;inset:0;background:rgba(10,28,46,.45);z-index:140;opacity:0;transition:opacity .3s}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(12,30,48,.3);z-index:140;opacity:0;transition:opacity .3s}
 .nav-overlay.show{display:block;opacity:1}
 
 /* =========================================================
@@ -846,7 +846,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   /* centered text on mobile - stronger, even veil so the video reads as a soft backdrop */
   .hero-video-bg .hero-video{object-position:center 32%}
   .hero-video-bg::after{background:linear-gradient(to bottom,rgba(247,251,253,.86),rgba(247,251,253,.92))}
-  .hero-rail{order:3;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;left:0}
+  .hero-rail{display:none}   /* hidden on mobile per client request (was a wrapped chip cluster) */
   .hero-rail li{flex-direction:row;gap:8px;padding-bottom:0;background:#fff;
     border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;box-shadow:var(--shadow-sm)}
   .hero-rail li:not(:last-child)::after{display:none}
@@ -871,8 +871,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 @media (max-width:860px){
   /* Mobile nav */
   .header-cta .btn-ghost{display:none}            /* keep the mobile header compact */
-  .login-link span{display:none}                  /* client-login becomes an icon button on mobile */
-  .login-link{padding:9px;border:1px solid var(--line)}
+  .login-link{display:none}                       /* client-login hidden on mobile per client request */
   .phone-link span{display:none}                  /* phone collapses to a tap-to-call icon on mobile */
   .phone-link{padding:9px;border:1px solid var(--line)}
   .header-cta{gap:8px;margin-inline-end:0}        /* drop the desktop nudge; tighten controls */
