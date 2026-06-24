@@ -1318,7 +1318,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 .a11y-foot a:hover{color:var(--green-600)}
 
 @media (max-width:860px){
-  .a11y-widget{bottom:74px;left:14px}
+  .a11y-widget{bottom:16px;left:14px}   /* mobile sticky bar is hidden, so sit snug to the bottom */
   .a11y-fab{width:50px;height:50px}
   .a11y-fab svg{width:28px;height:28px}
 }
