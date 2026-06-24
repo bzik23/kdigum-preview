@@ -1,0 +1,8 @@
+# Working/backup media + dev artifacts copied from the prototype but NOT part of
+# the published site. Keeps the GitHub Pages repo lean. (assets/hero-video.mp4,
+# the poster, logos, client images, article SVGs and assets/forms/* ARE published.)
+assets/chunks/
+assets/folderview.html
+assets/freeze.mp4
+assets/hero-clip3.mp4
+assets/hero-video-*.mp4
