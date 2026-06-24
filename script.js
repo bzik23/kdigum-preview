@@ -256,6 +256,31 @@
     }
   }
 
+  /* --- Homepage "מידע מקצועי" posts: mobile slider (1 card, side arrows, auto every 2s) --- */
+  const postsSlider = document.querySelector('[data-posts-slider]');
+  if (postsSlider) {
+    const pcards = Array.from(postsSlider.querySelectorAll('.post-card'));
+    const pPrev = postsSlider.querySelector('.ps-prev');
+    const pNext = postsSlider.querySelector('.ps-next');
+    let pIdx = 0, pTimer = null;
+    const pShow = (i) => {
+      pIdx = (i + pcards.length) % pcards.length;
+      pcards.forEach((c, n) => c.classList.toggle('is-active', n === pIdx));
+    };
+    const pStart = () => { if (reduceMotion || pTimer || !isMobile()) return; pTimer = setInterval(() => pShow(pIdx + 1), 2000); };
+    const pStop = () => { clearInterval(pTimer); pTimer = null; };
+    if (pNext) pNext.addEventListener('click', () => { pStop(); pShow(pIdx + 1); pStart(); });
+    if (pPrev) pPrev.addEventListener('click', () => { pStop(); pShow(pIdx - 1); pStart(); });
+    // only behave as a slider on mobile; on desktop the 3-up grid shows untouched
+    const pSync = () => {
+      if (isMobile()) { postsSlider.classList.add('is-slider'); pShow(pIdx); pStart(); }
+      else { postsSlider.classList.remove('is-slider'); pStop(); pcards.forEach((c) => c.classList.remove('is-active')); }
+    };
+    pSync();
+    window.addEventListener('resize', pSync);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) pStop(); else pStart(); });
+  }
+
   /* --- Footer year --- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
