@@ -38,17 +38,20 @@
      momentum-scroll drawer can be unreliable, so touchend drives the toggle and a
      time guard collapses the touchend + the ghost click that follows into one action. */
   document.querySelectorAll('.has-mega > .dd-toggle').forEach((link) => {
-    let last = 0;
+    const li = link.parentElement;
+    let suppressClick = false;
     const toggleSub = (e) => {
-      if (!isMobile()) return;
+      if (!isMobile()) return;                 // desktop keeps hover + normal link behaviour
       if (e.cancelable) e.preventDefault();
-      const now = Date.now();
-      if (now - last < 400) return;
-      last = now;
-      link.parentElement.classList.toggle('expanded');
+      e.stopPropagation();
+      li.classList.toggle('expanded');
     };
-    link.addEventListener('touchend', toggleSub);
-    link.addEventListener('click', toggleSub);
+    // touchend drives the toggle on iOS; a flag swallows the ghost click that follows
+    link.addEventListener('touchend', (e) => { suppressClick = true; toggleSub(e); });
+    link.addEventListener('click', (e) => {
+      if (suppressClick) { suppressClick = false; if (e.cancelable) e.preventDefault(); return; }
+      toggleSub(e);
+    });
   });
 
   /* --- Close mobile nav when a link is tapped --- */
@@ -288,6 +291,44 @@
     window.addEventListener('resize', pSync);
     document.addEventListener('visibilitychange', () => { if (document.hidden) pStop(); else pStart(); });
   }
+
+  /* --- Generic mobile card slider: 1 card at a time, auto-advances every 1.5s.
+         Applies to the services / "why us" grids on the homepage and the
+         "what's included" / "when" grids on every service page. Mobile-only;
+         on desktop the original multi-column grid is shown untouched. --- */
+  document.querySelectorAll('.services-grid, .features-grid, .topic-grid, .reg-list').forEach((grid) => {
+    const cards = Array.from(grid.children).filter((el) => el.nodeType === 1);
+    if (cards.length < 2) return;
+
+    const dots = document.createElement('div');
+    dots.className = 'ms-dots';
+    let idx = 0, timer = null;
+    const show = (i) => {
+      idx = (i + cards.length) % cards.length;
+      cards.forEach((c, n) => c.classList.toggle('ms-active', n === idx));
+      Array.from(dots.children).forEach((d, n) => d.classList.toggle('on', n === idx));
+    };
+    const start = () => { if (reduceMotion || timer || !isMobile()) return; timer = setInterval(() => show(idx + 1), 1500); };
+    const stop = () => { clearInterval(timer); timer = null; };
+
+    cards.forEach((c, i) => {
+      c.classList.add('in');                         // ensure revealed so it shows when active
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'מעבר לכרטיס ' + (i + 1));
+      b.addEventListener('click', () => { stop(); show(i); start(); });
+      dots.appendChild(b);
+    });
+    grid.insertAdjacentElement('afterend', dots);
+
+    const sync = () => {
+      if (isMobile()) { grid.classList.add('ms-slider'); show(idx); start(); }
+      else { grid.classList.remove('ms-slider'); stop(); cards.forEach((c) => c.classList.remove('ms-active')); }
+    };
+    sync();
+    window.addEventListener('resize', sync);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+  });
 
   /* --- Footer year --- */
   const yearEl = document.getElementById('year');
