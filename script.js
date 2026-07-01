@@ -34,23 +34,30 @@
   overlay.addEventListener('click', closeNav);
 
   /* --- Mobile dropdown accordion (mega menu) — robust for iOS touch ---
-     Bind touchend AND click: on iOS Safari a click handler on an <a> inside a
-     momentum-scroll drawer can be unreliable, so touchend drives the toggle and a
-     time guard collapses the touchend + the ghost click that follows into one action. */
+     Bind touchend AND click: on iOS Safari, touchend's preventDefault often
+     swallows the paired click, so a plain "suppress the next click" flag can get
+     stuck armed and then eat a later *legitimate* tap (dropdown appears dead).
+     Fix: reset the flag on every touchstart, so it can never carry over between
+     taps — touchend handles iOS, click handles mouse/Android, exactly one toggle. */
   document.querySelectorAll('.has-mega > .dd-toggle').forEach((link) => {
     const li = link.parentElement;
-    let suppressClick = false;
+    let touchHandled = false;
     const toggleSub = (e) => {
-      if (!isMobile()) return;                 // desktop keeps hover + normal link behaviour
-      if (e.cancelable) e.preventDefault();
+      if (e && e.cancelable) e.preventDefault();
       e.stopPropagation();
       li.classList.toggle('expanded');
     };
-    // touchend drives the toggle on iOS; a flag swallows the ghost click that follows
-    link.addEventListener('touchend', (e) => { suppressClick = true; toggleSub(e); });
-    link.addEventListener('click', (e) => {
-      if (suppressClick) { suppressClick = false; if (e.cancelable) e.preventDefault(); return; }
+    // a fresh tap always starts clean, so the flag can never stay stuck
+    link.addEventListener('touchstart', () => { touchHandled = false; }, { passive: true });
+    link.addEventListener('touchend', (e) => {
+      if (!isMobile()) return;                 // desktop keeps hover + normal link behaviour
+      touchHandled = true;                     // remember this tap so we swallow its ghost click
       toggleSub(e);
+    });
+    link.addEventListener('click', (e) => {
+      if (!isMobile()) return;                 // desktop: let the link navigate
+      if (touchHandled) { touchHandled = false; if (e.cancelable) e.preventDefault(); return; }
+      toggleSub(e);                            // mouse / Android click that had no touchend
     });
   });
 
