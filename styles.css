@@ -347,6 +347,9 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   .trust-strip{padding:14px 0 16px}
   .trust-strip .container{flex-direction:column}
   .ts-lead{text-align:center;max-width:none}
+  /* top-align the sector items so every icon sits on the same line, regardless of
+     whether its label wraps to one or two lines (was center-aligned → misaligned icons) */
+  .ts-list{align-items:flex-start}
   .ts-item{width:76px;font-size:12px}
   .ts-ico{width:44px;height:44px}
   .ts-ico svg{width:23px;height:23px}
@@ -1502,6 +1505,17 @@ html.a11y-stopmotion *,html.a11y-stopmotion *::before,html.a11y-stopmotion *::af
       rgba(247,251,253,.93) 100%)}
   /* the in-hero buttons are replaced by the permanent sticky bar below */
   .hero-actions{display:none}
+  /* client tweak (2026-07-01, mobile-only): declutter the hero for a video-first
+     first screen. Lift the headline high (tighter gap under the header), pull the
+     subtitle up a touch (smaller H1 bottom margin), hide the intro lead paragraph,
+     and push the three trust badges DOWN past the fold via a viewport-relative gap
+     so above the fold shows only the title + subtitle over a clean video area. The
+     trust-strip (lead text + sector icons) follows the badges down automatically.
+     svh = small viewport height (stable while the browser address bar is visible). */
+  .hero-inner{padding-top:14px}
+  .hero h1{margin-bottom:12px}
+  .hero-lead{display:none}
+  .hero-stats{margin-top:calc(100svh - 205px)}
 
   /* --- permanent sticky bottom CTA bar (centered lead CTA only) --- */
   .mobile-bar{display:flex;justify-content:center;position:fixed;left:0;right:0;bottom:0;z-index:140;gap:8px;
@@ -1516,7 +1530,12 @@ html.a11y-stopmotion *,html.a11y-stopmotion *::before,html.a11y-stopmotion *::af
     background:linear-gradient(145deg,var(--green-500),var(--green-600));
     color:#fff;box-shadow:0 6px 16px rgba(31,110,39,.30)}
   body{padding-bottom:66px}                        /* clearance so content isn't hidden behind the bar */
-  .a11y-widget{bottom:78px;left:14px}              /* lift the a11y FAB above the sticky bar */
+  /* a11y FAB aligned to the same line as the static "השאירו פרטים" CTA button:
+     bar button center sits 32px above the viewport bottom (8px pad + 24px half-height),
+     so a 50px FAB centers there at bottom:7px (+ same safe-area offset as the bar).
+     z-index lifted above the sticky bar (140) so the FAB paints on the bar's empty
+     left area instead of hiding behind its full-width translucent panel. */
+  .a11y-widget{bottom:calc(7px + env(safe-area-inset-bottom));left:14px;z-index:141}
 
   /* --- generic mobile card slider: 1 card at a time, JS auto-advances every 1.5s --- */
   .ms-slider{grid-template-columns:1fr;position:relative}
