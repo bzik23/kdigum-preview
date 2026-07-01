@@ -20,12 +20,17 @@
   const openNav = () => {
     nav.classList.add('open');
     overlay.classList.add('show');
+    // lift the header's stacking context above the overlay so the drawer receives taps
+    // (the fixed drawer is trapped inside the header's context; without this the overlay
+    // sits on top and swallows every tap). CSS also does this via :has() where supported.
+    if (header) header.classList.add('nav-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   };
   const closeNav = () => {
     nav.classList.remove('open');
     overlay.classList.remove('show');
+    if (header) header.classList.remove('nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   };

@@ -886,9 +886,13 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
     transform:translateX(100%);transition:transform .38s var(--ease);   /* slides in from the right to match the hamburger */
   }
   .main-nav.open{transform:translateX(0)}
-  /* drop the scrolled-header backdrop-filter while the drawer is open, so the
-     fixed drawer isn't trapped/greyed by the header's containing block */
-  .site-header:has(.main-nav.open){background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-color:transparent}
+  /* While the drawer is open: drop the scrolled-header backdrop-filter AND raise the
+     header's stacking context above the overlay (z-index:140). The drawer is fixed but
+     lives inside the header, so it's trapped in the header's own stacking context
+     (position:sticky + z-index:100) — without this, the overlay renders ON TOP of the
+     drawer and swallows every tap (menu items unreachable, taps just close the menu).
+     Driven by BOTH :has() and a JS-added .nav-open class so it works on every browser. */
+  .site-header:has(.main-nav.open),.site-header.nav-open{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-color:transparent;z-index:200}
   /* branded header band at the top of the drawer */
   .main-nav::before{content:"תפריט";position:sticky;top:0;z-index:1;display:flex;align-items:center;
     height:58px;margin:-8px -14px 8px;padding-inline:18px;font-weight:800;font-size:16px;color:var(--ink);
