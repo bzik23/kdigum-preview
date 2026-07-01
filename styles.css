@@ -1505,17 +1505,16 @@ html.a11y-stopmotion *,html.a11y-stopmotion *::before,html.a11y-stopmotion *::af
       rgba(247,251,253,.93) 100%)}
   /* the in-hero buttons are replaced by the permanent sticky bar below */
   .hero-actions{display:none}
-  /* client tweak (2026-07-01, mobile-only): declutter the hero for a video-first
-     first screen. Lift the headline high (tighter gap under the header), pull the
-     subtitle up a touch (smaller H1 bottom margin), hide the intro lead paragraph,
-     and push the three trust badges DOWN past the fold via a viewport-relative gap
-     so above the fold shows only the title + subtitle over a clean video area. The
-     trust-strip (lead text + sector icons) follows the badges down automatically.
-     svh = small viewport height (stable while the browser address bar is visible). */
+  /* client tweak (2026-07-01, mobile-only): declutter the hero. Lift the headline
+     high (tighter gap under the header), pull the subtitle up a touch (smaller H1
+     bottom margin) and hide the intro lead paragraph. Per client request the three
+     trust badges sit ABOVE THE FOLD, right under the subtitle (a modest fixed gap),
+     over the light-veiled top of the video so title + subtitle + badges all show on
+     the first screen. (Was previously pushed past the fold via 100svh - reverted.) */
   .hero-inner{padding-top:14px}
   .hero h1{margin-bottom:12px}
   .hero-lead{display:none}
-  .hero-stats{margin-top:calc(100svh - 205px)}
+  .hero-stats{margin-top:22px}
 
   /* --- permanent sticky bottom CTA bar (centered lead CTA only) --- */
   .mobile-bar{display:flex;justify-content:center;position:fixed;left:0;right:0;bottom:0;z-index:140;gap:8px;
