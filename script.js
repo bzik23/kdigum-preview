@@ -274,18 +274,21 @@
     }
   }
 
-  /* --- Homepage "מידע מקצועי" posts: mobile slider (1 card, side arrows, auto every 2s) --- */
-  const postsSlider = document.querySelector('[data-posts-slider]');
-  if (postsSlider) {
+  /* --- "מידע מקצועי" posts (homepage) + "מאמרים נוספים" related posts (article pages):
+         mobile slider — 1 card at a time, side arrows, auto-advances.
+         Interval is per-slider via data-slider-interval (homepage=2000, article pages=1500). --- */
+  document.querySelectorAll('[data-posts-slider]').forEach((postsSlider) => {
     const pcards = Array.from(postsSlider.querySelectorAll('.post-card'));
+    if (pcards.length < 2) return;
     const pPrev = postsSlider.querySelector('.ps-prev');
     const pNext = postsSlider.querySelector('.ps-next');
+    const interval = parseInt(postsSlider.getAttribute('data-slider-interval'), 10) || 2000;
     let pIdx = 0, pTimer = null;
     const pShow = (i) => {
       pIdx = (i + pcards.length) % pcards.length;
       pcards.forEach((c, n) => c.classList.toggle('is-active', n === pIdx));
     };
-    const pStart = () => { if (reduceMotion || pTimer || !isMobile()) return; pTimer = setInterval(() => pShow(pIdx + 1), 2000); };
+    const pStart = () => { if (reduceMotion || pTimer || !isMobile()) return; pTimer = setInterval(() => pShow(pIdx + 1), interval); };
     const pStop = () => { clearInterval(pTimer); pTimer = null; };
     if (pNext) pNext.addEventListener('click', () => { pStop(); pShow(pIdx + 1); pStart(); });
     if (pPrev) pPrev.addEventListener('click', () => { pStop(); pShow(pIdx - 1); pStart(); });
@@ -297,7 +300,7 @@
     pSync();
     window.addEventListener('resize', pSync);
     document.addEventListener('visibilitychange', () => { if (document.hidden) pStop(); else pStart(); });
-  }
+  });
 
   /* --- Generic mobile card slider: 1 card at a time, auto-advances every 1.5s.
          Applies to the services / "why us" grids on the homepage and the
