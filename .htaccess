@@ -1,0 +1,56 @@
+# ============================================================================
+#  קיסר דיגום - 301 redirects: old (WordPress) kdigum.co.il URLs -> new static site
+#  For Apache / LiteSpeed (mod_rewrite). If the host runs nginx, translate to
+#  nginx `rewrite ... permanent;` rules.
+#
+#  Hebrew old paths are matched on %{THE_REQUEST} (the RAW, still-%-encoded
+#  request line) so the UTF-8 encoding matches exactly regardless of how Apache
+#  decodes REQUEST_URI. ASCII paths use plain RewriteRule.
+# ============================================================================
+
+RewriteEngine On
+
+# ---- ASCII paths -----------------------------------------------------------
+
+# /services  ->  home, "תחומי הפעילות שלנו" section (NE keeps the #fragment intact)
+RewriteRule ^services/?$ /#services [R=301,NE,L]
+
+# /tips-for-writing-great-posts-that-increase-your-site-traffic  ->  home
+RewriteRule ^tips-for-writing-great-posts-that-increase-your-site-traffic/?$ / [R=301,L]
+
+# /make-the-most-of-the-season-by-following-these-simple-guidelines  ->  home
+RewriteRule ^make-the-most-of-the-season-by-following-these-simple-guidelines/?$ / [R=301,L]
+
+# ---- Hebrew paths (matched on the raw encoded request) ---------------------
+
+# /גלריה  (gallery)  ->  home
+RewriteCond %{THE_REQUEST} \s/+%D7%92%D7%9C%D7%A8%D7%99%D7%94/?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /פרוקטים  (projects)  ->  home
+RewriteCond %{THE_REQUEST} \s/+%D7%A4%D7%A8%D7%95%D7%A7%D7%98%D7%99%D7%9D/?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /תודה  (thank-you)  ->  home
+RewriteCond %{THE_REQUEST} \s/+%D7%AA%D7%95%D7%93%D7%94/?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /הסמכות-ותעודות  (accreditations & certificates)  ->  home
+RewriteCond %{THE_REQUEST} \s/+%D7%94%D7%A1%D7%9E%D7%9B%D7%95%D7%AA-%D7%95%D7%AA%D7%A2%D7%95%D7%93%D7%95%D7%AA/?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# /טפסים-להורדה  (forms to download)  ->  forms.html
+RewriteCond %{THE_REQUEST} \s/+%D7%98%D7%A4%D7%A1%D7%99%D7%9D-%D7%9C%D7%94%D7%95%D7%A8%D7%93%D7%94/?[\s?] [NC]
+RewriteRule ^ /forms.html [R=301,L]
+
+# /בדיקת-מים-חיטוי  (water testing / disinfection)  ->  water-sampling.html
+RewriteCond %{THE_REQUEST} \s/+%D7%91%D7%93%D7%99%D7%A7%D7%AA-%D7%9E%D7%99%D7%9D-%D7%97%D7%99%D7%98%D7%95%D7%99/?[\s?] [NC]
+RewriteRule ^ /water-sampling.html [R=301,L]
+
+# /copy-of-מאמר-ליגיונלה  (legionella article copy)  ->  pool-water.html
+RewriteCond %{THE_REQUEST} \s/+copy-of-%D7%9E%D7%90%D7%9E%D7%A8-%D7%9C%D7%99%D7%92%D7%99%D7%95%D7%A0%D7%9C%D7%94/?[\s?] [NC]
+RewriteRule ^ /pool-water.html [R=301,L]
+
+# /מאמר-בנושא-פיקוח-תברואת-מזון  (food-sanitation supervision article)  ->  food-sanitation.html
+RewriteCond %{THE_REQUEST} \s/+%D7%9E%D7%90%D7%9E%D7%A8-%D7%91%D7%A0%D7%95%D7%A9%D7%90-%D7%A4%D7%99%D7%A7%D7%95%D7%97-%D7%AA%D7%91%D7%A8%D7%95%D7%90%D7%AA-%D7%9E%D7%96%D7%95%D7%9F/?[\s?] [NC]
+RewriteRule ^ /food-sanitation.html [R=301,L]

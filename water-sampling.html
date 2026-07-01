@@ -201,7 +201,7 @@
     <!-- ============ PAGE HERO ============ -->
     <section class="page-hero">
       <div class="container">
-        <div class="page-hero-grid">
+        <div class="page-hero-grid no-media">
           <div class="page-hero-text">
             <nav class="breadcrumb" aria-label="מיקום">
               <a href="index.html">דף הבית</a>
@@ -223,29 +223,13 @@
             </div>
           </div>
 
-          <!-- ===== סרטון יוטיוב - דיגום מים | קיסר דיגום =====
-               להטמעה: החליפו את VIDEO_ID במזהה הסרטון מיוטיוב
-               (החלק שאחרי watch?v= בכתובת), מחקו את בלוק ה-placeholder
-               והסירו את סימני ההערה שעוטפים את ה-iframe. -->
-          <div class="page-hero-media">
-            <!-- placeholder עד להעלאת הסרטון -->
-            <div class="hero-video hero-video--placeholder">
-              <span class="hv-play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-              <span class="hv-label">סרטון הסבר על דיגום מים<br>יתווסף כאן בקרוב</span>
-            </div>
-            <!--
-            <div class="hero-video">
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="דיגום מים - קיסר דיגום"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-            -->
-          </div>
+          <!-- ===== סרטון יוטיוב הוסר זמנית - יתווסף לאחר עלייה לאוויר =====
+               כשהסרטון מוכן: הסירו את "no-media" מה-class של .page-hero-grid למעלה, והחזירו כאן:
+               <div class="page-hero-media"><div class="hero-video"><iframe
+                 src="https://www.youtube.com/embed/VIDEO_ID"
+                 title="דיגום מים - קיסר דיגום" loading="lazy"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowfullscreen></iframe></div></div> -->
         </div>
       </div>
     </section>

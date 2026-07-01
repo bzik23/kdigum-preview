@@ -651,6 +651,8 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 
 /* page hero with media (video) - text right, video left (RTL) */
 .page-hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(28px,4vw,56px)}
+/* hero ללא סרטון - טקסט בלבד על מלוא הרוחב (זמני, עד להעלאת הסרטונים) */
+.page-hero-grid.no-media{grid-template-columns:1fr}
 .page-hero-media{order:1}
 .hero-video{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;
   border:1px solid var(--line);box-shadow:var(--shadow-lg);background:#0c1f2c}
