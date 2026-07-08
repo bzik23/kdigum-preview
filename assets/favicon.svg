@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="קיסר דיגום">
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13" fill="#ffffff"/>
+  <g transform="rotate(-12 32 32)">
+    <path d="M25.9 29 V49.5 A6.1 6.1 0 0 0 38.1 49.5 V29 Z" fill="#43AF49"/>
+    <ellipse cx="32" cy="29" rx="6.1" ry="1.7" fill="#62C866"/>
+    <path d="M24.4 14 V49.5 A7.6 7.6 0 0 0 39.6 49.5 V14" fill="none" stroke="#14242E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="32" cy="12.5" rx="8.5" ry="2.5" fill="none" stroke="#14242E" stroke-width="2.1"/>
+    <path d="M26.2 19 H29.8 M26.2 23 H29.8" stroke="#14242E" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="37.5" cy="8" r="2.4" fill="#43AF49"/>
+    <circle cx="41.2" cy="4.4" r="1.7" fill="#43AF49"/>
+    <circle cx="43.8" cy="1.7" r="1.1" fill="#43AF49"/>
+  </g>
+</svg>

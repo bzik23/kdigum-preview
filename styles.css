@@ -139,7 +139,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 .logo-text small{font-size:11.5px;color:var(--muted);font-weight:500;letter-spacing:.2px}
 
 /* Nav */
-.main-nav>ul{display:flex;align-items:center;gap:2px}
+.main-nav>ul{display:flex;align-items:center;gap:5px}
 .main-nav a{
   display:inline-flex;align-items:center;gap:6px;
   padding:9px 14px;border-radius:10px;font-weight:600;font-size:15.5px;color:var(--body);
@@ -201,8 +201,8 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   transition:transform .25s var(--ease),box-shadow .25s}
 .btn-wa svg{width:24px;height:24px}
 .btn-wa:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 12px 28px rgba(37,211,102,.45)}
-/* subtle client-login link, sits beside the contact CTA */
-.login-link{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--body);
+/* client-login link removed from the header per client request (2026-07-08) */
+.login-link{display:none;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--body);
   padding:8px 12px;border-radius:10px;transition:color .2s,background .2s}
 .login-link svg{width:18px;height:18px;color:var(--green-600)}
 .login-link:hover{color:var(--ink);background:var(--bg-tint)}
@@ -359,6 +359,8 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
    SECTIONS
    ========================================================= */
 .section{padding:clamp(64px,8vw,100px) 0;position:relative}
+/* tighten the gap between the hero's trust-strip and the first content section (2026-07-08) */
+#services{padding-top:clamp(34px,4.2vw,52px)}
 .section-alt{background:var(--bg-soft)}
 .section-head{text-align:center;max-width:680px;margin:0 auto clamp(36px,5vw,56px)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:.4px;
@@ -873,11 +875,19 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   .header-cta .btn-ghost{display:none}            /* keep the mobile header compact */
   .login-link{display:none}                       /* client-login hidden on mobile per client request */
   .phone-link span{display:none}                  /* phone collapses to a tap-to-call icon on mobile */
-  .phone-link{padding:9px;border:1px solid var(--line)}
-  .header-cta{gap:8px;margin-inline-end:0}        /* drop the desktop nudge; tighten controls */
-  /* mobile header layout: logo to the LEFT, controls (incl. hamburger) to the RIGHT edge */
-  .header-inner{flex-direction:row-reverse}
-  .header-cta{flex-direction:row-reverse}         /* hamburger pinned to the far-right edge */
+  /* mobile header layout (2026-07-08): logo + WhatsApp/phone grouped at the LEFT,
+     hamburger pinned to the far-RIGHT edge. Bar is LTR so left->right order is explicit;
+     the RTL drawer is reset back to rtl so the Hebrew menu stays correct. */
+  .header-inner{flex-direction:row;direction:ltr;align-items:center}
+  .main-nav{direction:rtl}
+  .logo{align-self:flex-start;margin-top:-1px}    /* sit the logo a touch higher, at the left */
+  .header-cta{flex:1;flex-direction:row;justify-content:flex-start;gap:9px;margin:0;direction:ltr}
+  .header-cta .nav-toggle{margin-inline-start:auto} /* hamburger to the far-right edge */
+  /* softer / more delicate contact icons */
+  .btn-wa{width:38px;height:38px;box-shadow:0 4px 12px rgba(37,211,102,.22)}
+  .btn-wa svg{width:20px;height:20px}
+  .phone-link{padding:8px;border:1px solid var(--line-soft)}
+  .phone-link svg{width:18px;height:18px}
   .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;
     border:1px solid var(--line);background:#fff;border-radius:12px;cursor:pointer;box-shadow:var(--shadow-sm)}
   .nav-toggle span{display:block;width:22px;height:2.5px;background:var(--ink);border-radius:2px;margin-inline:auto;transition:.3s}
