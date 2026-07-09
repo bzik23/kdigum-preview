@@ -178,8 +178,9 @@
         return;
       }
       msg.style.color = '';
-      msg.textContent = 'תודה ' + name + '! קיבלנו את הפנייה ונחזור אליכם בהקדם.';
+      msg.textContent = 'מעבירים אתכם לאישור...';
       form.reset();
+      window.location.assign('thank-you.html');
     });
   }
 
