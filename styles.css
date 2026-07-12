@@ -398,6 +398,9 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 .service-card p{font-size:15px;color:var(--body);margin-bottom:16px}
 .svc-link{display:flex;width:fit-content;margin-inline-start:auto;align-items:center;gap:6px;font-weight:700;color:var(--green-700);font-size:15px;transition:gap .25s}
 .service-card:hover .svc-link{gap:11px}
+/* Equal-height service cards: flex column + push CTA to bottom so "לפרטים" links align across each row */
+.services-grid .service-card{display:flex;flex-direction:column}
+.services-grid .service-card .svc-link{margin-top:auto}
 
 /* ---- flip service cards (hover flips to a focused summary + CTA) ---- */
 .service-card.flip-card{background:transparent;border:0;box-shadow:none;padding:0;overflow:visible;
@@ -1560,4 +1563,24 @@ html.a11y-stopmotion *,html.a11y-stopmotion *::before,html.a11y-stopmotion *::af
   .ms-dots button::after{content:"";position:absolute;inset:-13px -7px}
   .ms-dots button.on{width:22px;border-radius:5px;background:var(--green-500)}
   @keyframes ms-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+
+/* ============================================================
+   Mobile hero enlargement + sector fold (2026-07-12, per client)
+   Phones only. Mirrors the live kd-hero-mobile WPCode block so the preview
+   matches production. Makes the hero video taller so the FIRST screen shows:
+   the video + the ts-lead line + the FIRST row of 3 sector icons
+   (בתי חולים / בתי מלון / בתי אבות ודיור מוגן); the second row of 3
+   (מפעלי מזון / מסעדות וקייטרינג / ועדי בתים) sits just below the fold,
+   revealed on scroll. Forces exactly 3 columns so the split is always
+   first-3 / last-3 on any phone width; the svh margin adapts to any height.
+   ============================================================ */
+@media (max-width:560px){
+  .trust-strip .ts-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 6px;justify-items:center;width:100%}
+  .trust-strip{margin-top:calc(100svh - 592px)}
+}
+/* Small phones (iPhone mini / ~360px Androids): keep the 3 trust badges on 2 rows — below
+   ~370px they wrap to 3 rows (+54px) which would push row-1 of the icons below the fold. */
+@media (max-width:374px){
+  .hero-stats{gap:14px 12px}
 }
