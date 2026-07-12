@@ -299,7 +299,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 /* nudged left so the rail icons sit directly under the header WhatsApp button.
    uses position offset (not transform) so the fade-up entrance animation,
    which animates `transform`, doesn't clobber the shift once it finishes. */
-.hero-rail{display:flex;flex-direction:column;align-items:center;gap:2px;position:relative;left:-45px}
+.hero-rail{display:flex;flex-direction:column;align-items:center;gap:2px;position:relative;left:-19px}
 .hero-rail li{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;padding-bottom:14px;cursor:default}
 .hero-rail li:not(:last-child)::after{content:"";position:absolute;top:46px;bottom:2px;width:0;
   border-inline-start:2px dotted rgba(14,40,60,.18)}
@@ -840,7 +840,7 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
 @media (max-width:1180px){
   .hero-inner{grid-template-columns:minmax(320px,1fr) minmax(0,1.2fr) 104px;gap:24px}
   .hero-rail .r-label{font-size:11px;max-width:74px}
-  .hero-rail{left:-35px}   /* narrower rail column → smaller shift to stay under WhatsApp btn */
+  .hero-rail{left:-8px}   /* narrower rail column → smaller shift to stay under WhatsApp btn */
 }
 @media (max-width:1024px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
