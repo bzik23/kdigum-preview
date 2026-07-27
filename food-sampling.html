@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260712" />
+  <link rel="stylesheet" href="styles.css?v=20260727" />
 
   <script type="application/ld+json">
   {
@@ -204,7 +204,7 @@
     <!-- ============ PAGE HERO ============ -->
     <section class="page-hero">
       <div class="container">
-        <div class="page-hero-grid no-media">
+        <div class="page-hero-grid has-media">
           <div class="page-hero-text">
             <nav class="breadcrumb" aria-label="מיקום">
               <a href="index.html">דף הבית</a>
@@ -213,8 +213,9 @@
               <span class="sep" aria-hidden="true">›</span>
               <span aria-current="page">דיגום מזון</span>
             </nav>
-            <h1>דיגום מזון</h1>
-            <p class="ph-sub">שירות מקיף לדיגום ובדיקת בטיחות מזון - ממסעדות וקייטרינג ועד מפעלי ייצור ויבואנים. בדיקות מיקרוביולוגיות וכימיות במעבדות מוסמכות ISO 17025, בפיקוח משרד הבריאות, בפריסה ארצית.</p>
+            <h1>דיגום מזון ובדיקות מזון</h1>
+            <p class="ph-sub">קיסר דיגום מספקת מעטפת מלאה לדיגום ולבדיקות מזון עבור מפעלי ייצור, מסעדות, חברות קייטרינג, מטבחים מוסדיים, יבואנים ועסקים בענף המזון. צוות החברה מגיע לבית העסק, נוטל את הדגימות בהתאם לסוג המוצר ולמטרת הבדיקה, מתעד ומשנע אותן בתנאים המתאימים למעבדות מוסמכות ומחזיר ללקוח את תוצאות הבדיקה בצורה מסודרת.</p>
+            <p class="ph-sub">ניתן לבצע בדיקות מיקרוביולוגיות, כימיות ומולקולריות בהתאם לצורך, לרבות איתור חיידקים פתוגניים, מתכות כבדות, שאריות חומרי הדברה, אלרגנים ומזהמים נוספים. כאשר מתגלה זיהום המחייב טיפול בשטח, קיסר דיגום יכולה לספק גם <a href="disinfection.html">שירותי ניקוי וחיטוי מקצועיים</a> כחלק ממעטפת הטיפול.</p>
             <div class="hero-actions" style="margin-top:26px">
               <a href="#contact" class="btn btn-primary btn-lg">לתיאום דיגום מזון
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
@@ -224,15 +225,28 @@
                 חייגו: 08-9332299
               </a>
             </div>
+            <ul class="hero-trust">
+              <li><span class="ht-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>דיגום מקצועי בבית העסק</li>
+              <li><span class="ht-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5M10.5 3v5.6L5.6 17.4A2 2 0 0 0 7.3 20.5h9.4a2 2 0 0 0 1.7-3.1L13.5 8.6V3"/><path d="M8.2 14.4h7.6"/></svg></span>העברה למעבדות מוסמכות</li>
+              <li><span class="ht-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.6v5"/><path d="M12 16.2h.01"/></svg></span>מענה גם במקרה של תוצאה חריגה</li>
+            </ul>
           </div>
 
-          <!-- ===== סרטון יוטיוב הוסר זמנית - יתווסף לאחר עלייה לאוויר =====
-               כשהסרטון מוכן: הסירו את "no-media" מה-class של .page-hero-grid למעלה, והחזירו כאן:
-               <div class="page-hero-media"><div class="hero-video"><iframe
-                 src="https://www.youtube.com/embed/VIDEO_ID"
-                 title="דיגום מזון - קיסר דיגום" loading="lazy"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                 allowfullscreen></iframe></div></div> -->
+          <div class="page-hero-media">
+            <!-- media container 16:10. mediaType="image" (ברירת מחדל) | mediaType="video".
+                 להחלפה לסרטון: להחליף את תג ה-img כולו ב:
+                 <video class="hm-asset" autoplay muted loop playsinline preload="metadata"
+                        poster="POSTER.jpg" width="1600" height="1000"
+                        aria-label="דיגום מזון מקצועי בבית העסק">
+                   <source src="VIDEO.webm" type="video/webm">
+                   <source src="VIDEO.mp4" type="video/mp4">
+                 </video>
+                 ולשנות data-media-type ל-"video". גובה המכל קבוע (aspect-ratio) - אין קפיצת תוכן. -->
+            <figure class="hero-media" data-media-type="image">
+              <img class="hm-asset" src="assets/hero/food-sampling-hero.webp" width="1600" height="1000"
+                   alt="בדיקות מזון במעבדה מוסמכת - נטילת דגימות מזון לבדיקה" fetchpriority="high" decoding="async" />
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -241,7 +255,7 @@
     <div class="accreditation">
       <div class="container">
         <svg class="ac-ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        <p>כלל בדיקות המזון מתבצעות במעבדה מוסמכת <strong class="iso-badge">ISO 17025</strong> תחת <strong>הרשות הלאומית להסמכת מעבדות</strong> ובקרת <strong>משרד הבריאות</strong></p>
+        <p>בהתאם לסוג הבדיקה, הדגימות מועברות למעבדות מוסמכות ומוכרות לביצוע הבדיקות הרלוונטיות, לרבות מעבדות בהסמכת <strong class="iso-badge">ISO 17025</strong></p>
       </div>
     </div>
 
@@ -493,6 +507,6 @@
   </div>
 
   <div class="nav-overlay" id="navOverlay"></div>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

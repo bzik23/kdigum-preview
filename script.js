@@ -505,3 +505,23 @@
   /* Process-flow connectors are now plain CSS chevron arrows (one identical arrow
      between every step, including the two decision lanes) - no JS drawing needed. */
 })();
+
+/* -------------------------------------------------------------
+   HERO MEDIA (.hero-media) - video mode + prefers-reduced-motion
+   The hero media container may hold an <img> (default) or a <video>.
+   When a video is present and the visitor asked for reduced motion,
+   we do not autoplay: the video is paused and native controls are
+   shown so it can still be played on demand.
+   ------------------------------------------------------------- */
+(function () {
+  var vids = document.querySelectorAll('.hero-media video.hm-asset');
+  if (!vids.length) return;
+  var mq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!mq || !mq.matches) return;
+  Array.prototype.forEach.call(vids, function (v) {
+    v.removeAttribute('autoplay');
+    v.autoplay = false;
+    v.controls = true;
+    v.pause();
+  });
+})();

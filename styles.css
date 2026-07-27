@@ -676,6 +676,47 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
   .hero-video{max-width:560px}
 }
 
+/* ---------------------------------------------------------
+   HERO MEDIA COMPONENT (.hero-media)
+   מכל מדיה ביחס 16:10 לעמודת ההירו - תמונה היום, מוכן לסרטון.
+   החלפה לסרטון: להחליף את <img class="hm-asset"> ב-<video class="hm-asset">
+   עם autoplay muted loop playsinline preload="metadata" poster="...".
+   --------------------------------------------------------- */
+.page-hero-grid.has-media{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);align-items:center}
+.page-hero-grid.has-media .page-hero-text{text-align:right}
+.page-hero-grid.has-media .ph-sub{max-width:none}
+.page-hero-grid.has-media .ph-sub + .ph-sub{margin-top:14px;font-size:clamp(15px,1.55vw,17px)}
+.page-hero-grid.has-media .hero-actions{margin-bottom:0}
+.page-hero-media{position:relative}
+/* אלמנט גרפי עדין בירוק המותג מאחורי המדיה */
+.page-hero-media::before{content:"";position:absolute;left:-18px;bottom:-18px;width:46%;height:52%;
+  border-radius:calc(var(--radius) + 4px);z-index:0;
+  background:linear-gradient(140deg,rgba(67,175,73,.20),rgba(67,175,73,.05))}
+.hero-media{position:relative;z-index:1;margin:0;aspect-ratio:16/10;overflow:hidden;
+  border-radius:var(--radius);background:#e7eef3;
+  border:1px solid rgba(14,34,54,.07);box-shadow:0 26px 58px rgba(14,34,54,.16)}
+.hero-media .hm-asset{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* trust items מתחת לכפתורי ההירו */
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px 20px;margin:22px 0 0;padding:0;list-style:none}
+.hero-trust li{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;color:var(--body)}
+.hero-trust .ht-ico{display:grid;place-items:center;flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+  background:var(--green-tint);color:var(--green-700)}
+.hero-trust .ht-ico svg{width:15px;height:15px}
+@media (max-width:1100px){
+  .page-hero-grid.has-media{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+}
+@media (max-width:860px){
+  .page-hero-grid.has-media{grid-template-columns:1fr}
+  /* מובייל: קודם תוכן, אחר כך מדיה */
+  .page-hero-grid.has-media .page-hero-media{order:1;margin-top:22px}
+  .page-hero-media::before{display:none}
+  .hero-media{max-width:560px;margin-inline:auto}
+  .hero-trust{gap:9px 16px}
+  /* בעמודי השירות ההירו הוא נקודת ההמרה - הכפתורים נשארים גם במובייל
+     (הכלל הגלובלי מסתיר .hero-actions כי בעמוד הבית יש בר תחתון קבוע) */
+  .page-hero .hero-actions{display:flex}
+}
+
 /* =========================================================
    SERVICE / CATEGORY PAGES - lead, audience chips, topics
    ========================================================= */
@@ -921,8 +962,10 @@ h1,h2,h3,h4{color:var(--ink);line-height:1.18;font-weight:800}
     width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
     font-size:23px;line-height:1;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
   .nav-close:hover{background:var(--green-tint);color:var(--green-700);border-color:var(--green-300)}
-  .mega{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:transparent;
-    grid-template-columns:1fr;padding:4px 10px 10px;gap:0;display:none}
+  /* reset ALL mega variants (incl. .mega-narrow / .mega-sectors, whose desktop grid-template-columns
+     + min-width otherwise leak into the accordion and shove sub-items off-screen to the right) */
+  .mega,.mega-narrow,.mega-sectors{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:transparent;
+    grid-template-columns:1fr;min-width:0;padding:4px 10px 10px;gap:0;display:none}
   .mega::before{display:none}                       /* no hover-bridge in the mobile accordion */
   .has-mega.expanded .mega{display:grid}
   /* flatten the desktop category cards inside the mobile accordion */
