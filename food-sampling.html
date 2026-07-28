@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260727" />
+  <link rel="stylesheet" href="styles.css?v=20260728" />
 
   <script type="application/ld+json">
   {
@@ -70,7 +70,7 @@
       box-shadow:0 18px 40px rgba(67,175,73,.30),0 0 0 3px rgba(230,149,42,.16);
     }
 
-    /* "נושאים מרכזיים" cards - a subtle orange frame as a light touch of warmth */
+    /* "מה חשוב לדעת" cards - a subtle orange frame as a light touch of warmth */
     .topic{border:1px solid rgba(230,149,42,.30)}
     .topic:hover{
       border-color:rgba(230,149,42,.60);
@@ -294,7 +294,7 @@
           <h2>בחרו את סוג הבדיקה</h2>
           <p>מגוון מלא של בדיקות מזון - לכל סוג עסק, מתקן ודרישה רגולטורית.</p>
         </div>
-        <div class="cards-grid services-grid">
+        <div class="cards-grid services-grid svc-grid-5 no-ms">
           <a href="food-factories.html" class="service-card flip-card reveal" aria-label="בדיקות מזון למפעלים - לפרטים מלאים">
             <div class="flip-inner">
               <div class="flip-face flip-front">
@@ -373,30 +373,77 @@
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">מה חשוב לדעת</span>
-          <h2>נושאים מרכזיים בדיגום מזון</h2>
-          <p>כל מה שצריך להבין לפני שמתחילים תוכנית בדיקות מזון בעסק.</p>
+          <span class="eyebrow">סוגי בדיקות מזון</span>
+          <h2>מה חשוב לדעת בנושא דיגום מזון</h2>
+          <p>בחירת סל הבדיקות הנכון היא ההבדל בין תעודה שמונחת בתיק לבין כלי שבאמת שומר על העסק ועל הצרכן.</p>
         </div>
-        <div class="cards-grid topic-grid">
+        <p class="topic-lead reveal">דיגום מזון הוא תהליך מבוקר של נטילת דגימות מייצגות ממוצר מוגמר, מחומרי גלם, ממשטחי עבודה ומסביבת הייצור, בתנאים סטריליים ובשרשרת קור שמורה, על ידי דוגם מוסמך. הדגימות שאנו נוטלים מועברות למעבדות מוסמכות המבצעות את הבדיקות בפועל. סוג הבדיקה נגזר מהמוצר, מתהליך הייצור ומהדרישה הרגולטורית, ולכן חשוב להכיר את משפחות הבדיקות המרכזיות עוד לפני שבונים תוכנית. אירוע זיהום אחד עלול לסכן צרכנים, לעצור ייצור ולפגוע במוניטין שנבנה שנים, ודיגום תקופתי מאתר את הכשל בזמן שעוד אפשר לטפל בו.</p>
+        <div class="cards-grid topic-grid no-ms">
           <article class="topic reveal">
             <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6a2 2 0 0 0 .24.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.76-2.96l5.52-10.08A2 2 0 0 0 10 8V2"/><path d="M6.45 15h11.1M8.5 2h7"/></svg></span>
-            <h3>מהו דיגום מזון</h3>
-            <p>דיגום מזון הוא תהליך מבוקר של נטילת דגימות מייצגות ממוצרי מזון, מחומרי גלם, ממשטחים ומסביבת הייצור, ושליחתן לבדיקה במעבדה מוסמכת. הדגימה נלקחת בתנאים סטריליים ובשרשרת קור מבוקרת על ידי דוגם מוסמך.</p>
+            <h3>בדיקות כימיות</h3>
+            <p>מאפיינות את ההרכב של המוצר ואת טוהרו. הן עונות על השאלות מה בדיוק יש בתוך המוצר, האם הערכים תואמים את מה שמובטח על התווית, והאם חדרו אליו חומרים שלא אמורים להיות שם.</p>
+            <ul class="t-list">
+              <li>הרכב ותכולה: חלבון, שומן, סוכרים, סיבים ומינרלים</li>
+              <li>לחות, אפר, חומציות ומליחות</li>
+              <li>שאריות חומרי הדברה, מתכות ומזהמים</li>
+              <li>תוספי מזון, משמרים ושרידי חומרי ניקוי</li>
+            </ul>
           </article>
           <article class="topic reveal">
             <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span>
-            <h3>אילו בדיקות מבוצעות</h3>
-            <p>הבדיקות כוללות מדדים מיקרוביולוגיים כמו סלמונלה, ליסטריה, E. coli, סטפילוקוקוס וספירת חיידקים כללית, לצד בדיקות כימיות, חומרי הדברה ומתכות - בהתאם לסוג המוצר ולדרישה הרגולטורית.</p>
+            <h3>בדיקות מיקרוביאליות</h3>
+            <p>הלב של בטיחות המזון. הן מאתרות חיידקים פתוגניים ומודדות את העומס המיקרוביאלי הכללי, ובכך מעידות גם על היגיינת הייצור וגם על יציבות המוצר לאורך חיי המדף.</p>
+            <ul class="t-list">
+              <li>פתוגנים: סלמונלה, ליסטריה, E. coli, סטפילוקוקוס, Bacillus cereus</li>
+              <li>ספירת חיידקים כללית, שמרים ועובשים</li>
+              <li>אנטרובקטריאסיאה כמדד להיגיינת הייצור</li>
+              <li>הערכת חיי מדף ויציבות המוצר לאורך זמן</li>
+            </ul>
           </article>
           <article class="topic reveal">
-            <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></span>
-            <h3>דרישות רגולטוריות</h3>
-            <p>חוק הגנה על בריאות הציבור (מזון) ועקרונות HACCP מחייבים תוכנית בדיקות מסודרת. אנו מסייעים לבנות תוכנית שעומדת בדרישות משרד הבריאות והרשות המקומית - בלי כאב ראש רגולטורי.</p>
+            <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M8 22h8M8.5 2c0 4.5 7 5.5 7 10s-7 5.5-7 10"/><path d="M15.5 2c0 4.5-7 5.5-7 10s7 5.5 7 10"/></svg></span>
+            <h3>בדיקות מולקולריות</h3>
+            <p>מבוססות על זיהוי DNA ומספקות תשובה מהירה ומדויקת במיוחד. הן שימושיות כשנדרשת תוצאה בלוח זמנים קצר, או כשצריך לענות על שאלה שבדיקה מיקרוביאלית רגילה לא עונה עליה.</p>
+            <ul class="t-list">
+              <li>זיהוי מהיר של פתוגנים בשיטות מבוססות PCR</li>
+              <li>אימות אותנטיות והרכב של חומרי גלם</li>
+              <li>בדיקות לנוכחות רכיבים מהונדסים גנטית</li>
+              <li>אפיון מולקולרי לאיתור מקור של זיהום חוזר</li>
+            </ul>
+          </article>
+          <article class="topic reveal">
+            <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8.5 11h5M11 8.5v5"/></svg></span>
+            <h3>זיהוי ובדיקת חומרים</h3>
+            <p>מענה למקרים שאינם שגרתיים. כשמתגלה גוף זר במוצר, שינוי בצבע, בריח או במרקם, כשל באריזה או סטייה בחומר גלם, נדרשת בדיקה ייעודית שמזהה במה בדיוק מדובר ומאיפה זה הגיע.</p>
+            <ul class="t-list">
+              <li>זיהוי גופים זרים ומשקעים במוצר</li>
+              <li>בירור שינויי צבע, ריח, טעם ומרקם</li>
+              <li>חקר כשלים בתהליך הייצור, בציוד ובאריזה</li>
+              <li>השוואה בין אצוות ובין ספקי חומרי גלם</li>
+            </ul>
+          </article>
+          <article class="topic reveal">
+            <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8.5 13h7M8.5 17h4"/></svg></span>
+            <h3>בדיקות לסימון תזונתי</h3>
+            <p>תקנות הסימון מחייבות ערכים מדויקים על גבי התווית, לרבות סימון החזית. הבדיקות מספקות את הנתונים שעליהם נשענת התווית ומונעות פער בין מה שכתוב לבין מה שנמצא בפועל במוצר.</p>
+            <ul class="t-list">
+              <li>קלוריות, שומן כולל, שומן רווי ושומן טרנס</li>
+              <li>נתרן, סוכרים, סיבים תזונתיים וחלבון</li>
+              <li>התאמת הערכים לתווית ולסימון החזית</li>
+              <li>בדיקה מחודשת אחרי שינוי מתכון או מוצר חדש</li>
+            </ul>
           </article>
           <article class="topic reveal">
             <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <h3>למה זה קריטי לעסק</h3>
-            <p>אירוע זיהום מזון עלול לסכן לקוחות, לגרור סגירת עסק ולפגוע במוניטין שנבנה שנים. דיגום תקופתי מאתר כשלים מבעוד מועד ומגן גם על הצרכן וגם על העסק.</p>
+            <h3>תוכנית בדיקות ורגולציה</h3>
+            <p>תדירות הדיגום, נקודות הדגימה וסל הבדיקות אינם זהים לכל עסק. אנו בונים תוכנית שמתאימה לסוג הפעילות ולדרישות הרישוי, כך שהבדיקות יענו על הצורך האמיתי בלי בדיקות מיותרות.</p>
+            <ul class="t-list">
+              <li>התאמה לדרישות משרד הבריאות והרשות המקומית</li>
+              <li>שילוב בעקרונות HACCP ובנהלי בקרת האיכות</li>
+              <li>קביעת נקודות דיגום ותדירות לאורך קו הייצור</li>
+              <li>ליווי, תיעוד ומעקב אחר התוצאות לאורך זמן</li>
+            </ul>
           </article>
         </div>
       </div>

@@ -1627,3 +1627,50 @@ html.a11y-stopmotion *,html.a11y-stopmotion *::before,html.a11y-stopmotion *::af
 @media (max-width:374px){
   .hero-stats{gap:14px 12px}
 }
+
+
+/* ============================================================
+   food-sampling page layout helpers (2026-07-28, per client)
+   1) .svc-grid-5 - the default .services-grid is 4-up, which leaves a lone
+      orphan card on a second row when a section holds 5 cards. A 6-column
+      track with 2-column spans reproduces the exact 3-up card width, and
+      pinning the 4th card to column 2 centers the trailing pair: 3 on top,
+      2 centered below.
+   2) .no-ms - opts a card grid out of the generic one-card auto-slider that
+      script.js turns on for .services-grid / .topic-grid on mobile, so every
+      card is shown stacked one after another instead.
+   3) .topic-lead / .t-list - intro paragraph and bullet list inside the
+      "מה חשוב לדעת בנושא דיגום מזון" cards.
+   ============================================================ */
+.services-grid.svc-grid-5{grid-template-columns:repeat(6,1fr)}
+.services-grid.svc-grid-5>.service-card{grid-column:span 2}
+.services-grid.svc-grid-5>.service-card:nth-child(4){grid-column:2/span 2}
+@media (max-width:1024px){
+  .services-grid.svc-grid-5{grid-template-columns:repeat(4,1fr)}
+  .services-grid.svc-grid-5>.service-card:nth-child(4){grid-column:span 2}
+  .services-grid.svc-grid-5>.service-card:nth-child(5){grid-column:2/span 2}
+}
+@media (max-width:560px){
+  .services-grid.svc-grid-5{grid-template-columns:1fr}
+  .services-grid.svc-grid-5>.service-card,
+  .services-grid.svc-grid-5>.service-card:nth-child(4),
+  .services-grid.svc-grid-5>.service-card:nth-child(5){grid-column:auto}
+}
+
+/* show every card stacked instead of the 1-card slider (mobile) */
+@media (max-width:860px){
+  .cards-grid.no-ms.ms-slider>:not(.ms-active){display:flex}
+  .cards-grid.no-ms.ms-slider>.ms-active{animation:none}
+  .cards-grid.no-ms+.ms-dots{display:none}
+}
+
+.topic-lead{max-width:900px;margin:0 auto 30px;text-align:center;
+  font-size:16.5px;line-height:1.85;color:var(--body)}
+.topic .t-list{margin-top:13px;display:grid;gap:7px;list-style:none;padding:0}
+.topic .t-list li{position:relative;padding-inline-start:18px;
+  font-size:14.5px;line-height:1.65;color:var(--body)}
+.topic .t-list li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+  width:6px;height:6px;border-radius:50%;background:var(--green-500)}
+@media (max-width:560px){
+  .topic-lead{text-align:right;font-size:15.5px;margin-bottom:24px}
+}
